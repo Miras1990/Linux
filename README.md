@@ -1,2 +1,2 @@
 # Linux-Config-Files
-Pliki konfiguracyjne dla systemów z rodziny Linux
+Moje pliki konfiguracyjne dla systemów z rodziny Linux oraz modyfikacje.
