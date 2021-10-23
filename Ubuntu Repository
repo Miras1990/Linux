@@ -1,0 +1,39 @@
+ppa:dhor/myway
+ppa:netext/netext73
+ppa:libreoffice/ppa
+ppa:obsproject/obs-studio
+ppa:timchen119/mt7610u-dkms  <<-- sterowniki do TP-Link T2U
+ppa:graphics-drivers/ppa
+ppa:daniruiz/flat-remix
+ppa:canonical-hwe-team/backport-iwlwifi
+ppa:paulo-miguel-dias/pkppa  <<-- eksperymentalne
+ppa:intel-opencl/intel-opencl
+ppa:yktooo/ppa - sudo apt install indicator-sound-switcher
+ppa:kritalime/ppa
+ppa:ubuntuhandbook1/gimp
+ppa:linrunner/tlp
+
+EDYTOR ATOM
+
+wget -qO - https://packagecloud.io/AtomEditor/atom/gpgkey | sudo apt-key add -
+sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list'
+sudo apt update
+sudo apt install atom
+
+FLATPAK
+
+sudo add-apt-repository ppa:alexlarsson/flatpak
+sudo apt update
+sudo apt install flatpak
+sudo apt install gnome-software-plugin-flatpak
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+SPOTIFY
+
+curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key add - 
+echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+
+DARKTABLE
+
+echo 'deb http://download.opensuse.org/repositories/graphics:/darktable/xUbuntu_20.04/ /' | sudo tee /etc/apt/sources.list.d/graphics:darktable.list
+curl -fsSL https://download.opensuse.org/repositories/graphics:darktable/xUbuntu_20.04/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/graphics_darktable.gpg > /dev/null
