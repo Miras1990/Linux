@@ -1,0 +1,630 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metapackage xmlns:os="http://opensuse.org/Standards/One_Click_Install" xmlns="http://opensuse.org/Standards/One_Click_Install">
+ <!--
+        Maintained by the following authors:
+        * Martin Schlander <mschlander@opensuse.org>        
+    -->
+<group distversion="openSUSE Leap 15.3">
+        <name>Codecs for openSUSE GNOME</name>
+        <summary>Extra Multimedia Codecs and Proprietary Software for GNOME</summary>
+        <description>
+        An easy way to install a selection of popular multimedia codecs
+    </description>
+        <remainSubscribed/>
+        <repositories>
+            <repository recommended="true" format="auto">
+                <name>Packman Repository</name>
+                <summary>Packman Software Repository</summary>
+                <description>Packman build software packages to enable users to easily install and remove software on Linux. More specifically, they do so for software that is not shipped as part of distributions or that are shipped as an outdated version.</description>
+                <url>http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_$releasever/</url>
+            </repository>
+            <repository recommended="true" format="auto">
+                <name>libdvdcss repository</name>
+                <summary>Repository with libdvdcss</summary>
+                <description>Encrypted DVD support</description>
+                <url>http://opensuse-guide.org/repo/openSUSE_Leap_$releasever/</url>
+	      </repository>
+        </repositories>
+        <software>
+            <item recommended="true">
+                <name>libdvdcss2</name>
+                <summary>Select this to be able to play Encrypted DVDs.</summary>
+                <description>A simple library designed for accessing DVDs without having to bother about the decryption. Install this to be able to play Encrypted DVDs.</description>
+	      </item>
+            <item recommended="true">
+                <name>flash-player</name>
+                <summary>Macromedia Flash Plug-In</summary>
+                <description>This package contains Macromedia's Flash plug-in for the supported Web browsers. This includes Netcape6, Mozilla (all Gecko browsers), and Konqueror. Netscape 4 is not able to use Flash 6.</description>
+            </item>
+            <item recommended="true">
+                <name>ffmpeg-3</name>
+                <summary>Hyper fast MPEG1/MPEG4/H263/RV and AC3/MPEG audio encoder</summary>
+                <description>Hyper fast MPEG1/MPEG4/H263/RV and AC3/MPEG audio encoder.</description>
+            </item>
+            <item recommended="false">
+                <name>lame</name>
+                <summary>LAME adds support for encoding audio data into the MP3 format</summary>
+                <description>LAME is an educational tool to be used for learning about MP3 encoding.  The goal of the LAME project is to use the open source model to improve the psycho acoustics, noise shaping and speed of MP3.  Another goal of the LAME project is to use these improvements for the basis of a patent free audio compression codec for the GNU project.</description>
+            </item>
+            <item recommended="true">
+                <name>gstreamer-plugins-base</name>
+                <summary>GStreamer plugins base</summary>
+                <description>GStreamer is a streaming media framework based on graphs of filters that operate on media data. Applications using this library can do anything media-related, from real-time sound processing to playing videos. Its plug-in-based architecture means that new data types or processing capabilities can be added simply by installing new plug-ins.</description>
+            </item>
+            <item recommended="true">
+                <name>gstreamer-plugins-good</name>
+                <summary>GStreamer Good Plug-ins</summary>
+                <description>GStreamer is a streaming media framework based on graphs of filters that operate on media data. Applications using this library can do anything media-related, from real-time sound processing to playing videos. Its plug-in-based architecture means that new data types or processing capabilities can be added simply by installing new plug-ins.</description>
+            </item>
+	    <item recommended="true">
+                <name>gstreamer-plugins-good-extra</name>
+                <summary>Complementary plugins for gstreamer-plugins-good</summary>
+                <description>This package provides complementary plugins for gstreamer-plugins-good.</description>
+            </item>
+            <item recommended="true">
+                <name>gstreamer-plugins-bad</name>
+                <summary>GStreamer Streaming-Media Framework Plug-Ins</summary>
+                <description>GStreamer is a streaming media framework based on graphs of filters that operate on media data. Applications using this library can do anything media-related,from real-time sound processing to playing videos. Its plug-in-based architecture means that new data types or processing capabilities can be added simply by installing new plug-ins.</description>
+            </item>
+	    <item recommended="true">
+                <name>gstreamer-plugins-bad-orig-addon</name>
+                <summary>GStreamer Streaming-Media Framework Plug-Ins</summary>
+                <description>GStreamer is a streaming media framework based on graphs of filters that operate on media data. Applications using this library can do anything media-related,from real-time sound processing to playing videos. Its plug-in-based architecture means that new data types or processing capabilities can be added simply by installing new plug-ins.</description>
+            </item>
+            <item recommended="true">
+                <name>gstreamer-plugins-ugly</name>
+                <summary>GStreamer Streaming-Media Framework Plug-Ins</summary>
+                <description>GStreamer is a streaming media framework based on graphs of filters that operate on media data. Applications using this library can do anything media-related,from real-time sound processing to playing videos. Its plug-in-based architecture means that new data types or processing capabilities can be added simply by installing new plug-ins.</description>
+            </item>
+	    <item recommended="true">
+                <name>gstreamer-plugins-ugly-orig-addon</name>
+                <summary>GStreamer Streaming-Media Framework Plug-Ins</summary>
+                <description>GStreamer is a streaming media framework based on graphs of filters that operate on media data. Applications using this library can do anything from real-time sound processing to playing videos and just about anything else media-related. Its plug-in-based architecture means that new data types or processing capabilities can be added simply by installing new plug-ins. This package contains well-written plug-ins that can't be shipped in openSUSE because of patent problems.</description>
+            </item>
+	    <item recommended="true">
+                <name>gstreamer-plugins-libav</name>
+                <summary>GStreamer Streaming-Media Framework Plug-Ins</summary>
+                <description>GStreamer is a streaming media framework based on graphs of filters that operate on media data. Applications using this library can do anything from real-time sound processing to playing videos and just about anything else media-related. Its plug-in-based architecture means that new data types or processing capabilities can be added simply by installing new plug-ins. This package contains well-written plug-ins that can't be shipped in openSUSE because of patent problems.</description>
+            </item>
+	   <item recommended="true">
+                <name>dvdauthor07</name>
+                <summary>A set of low-level tools to help you author a DVD</summary>
+                <description>dvdauthor is a program that will generate a DVD movie from a valid mpeg2 stream that should play when you put it in a DVD player.</description>
+            </item>	    
+            </software>
+   </group> 
+    <group distversion="openSUSE Leap 15.2">
+        <name>Codecs for openSUSE GNOME</name>
+        <summary>Extra Multimedia Codecs and Proprietary Software for GNOME</summary>
+        <description>
+        An easy way to install a selection of popular multimedia codecs
+    </description>
+        <remainSubscribed/>
+        <repositories>
+            <repository recommended="true" format="auto">
+                <name>Packman Repository</name>
+                <summary>Packman Software Repository</summary>
+                <description>Packman build software packages to enable users to easily install and remove software on Linux. More specifically, they do so for software that is not shipped as part of distributions or that are shipped as an outdated version.</description>
+                <url>http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_$releasever/</url>
+            </repository>
+            <repository recommended="true" format="auto">
+                <name>libdvdcss repository</name>
+                <summary>Repository with libdvdcss</summary>
+                <description>Encrypted DVD support</description>
+                <url>http://opensuse-guide.org/repo/openSUSE_Leap_$releasever/</url>
+	      </repository>
+        </repositories>
+        <software>
+            <item recommended="true">
+                <name>libdvdcss2</name>
+                <summary>Select this to be able to play Encrypted DVDs.</summary>
+                <description>A simple library designed for accessing DVDs without having to bother about the decryption. Install this to be able to play Encrypted DVDs.</description>
+	      </item>
+            <item recommended="true">
+                <name>flash-player</name>
+                <summary>Macromedia Flash Plug-In</summary>
+                <description>This package contains Macromedia's Flash plug-in for the supported Web browsers. This includes Netcape6, Mozilla (all Gecko browsers), and Konqueror. Netscape 4 is not able to use Flash 6.</description>
+            </item>
+            <item recommended="true">
+                <name>ffmpeg-3</name>
+                <summary>Hyper fast MPEG1/MPEG4/H263/RV and AC3/MPEG audio encoder</summary>
+                <description>Hyper fast MPEG1/MPEG4/H263/RV and AC3/MPEG audio encoder.</description>
+            </item>
+            <item recommended="false">
+                <name>lame</name>
+                <summary>LAME adds support for encoding audio data into the MP3 format</summary>
+                <description>LAME is an educational tool to be used for learning about MP3 encoding.  The goal of the LAME project is to use the open source model to improve the psycho acoustics, noise shaping and speed of MP3.  Another goal of the LAME project is to use these improvements for the basis of a patent free audio compression codec for the GNU project.</description>
+            </item>
+            <item recommended="true">
+                <name>gstreamer-plugins-base</name>
+                <summary>GStreamer plugins base</summary>
+                <description>GStreamer is a streaming media framework based on graphs of filters that operate on media data. Applications using this library can do anything media-related, from real-time sound processing to playing videos. Its plug-in-based architecture means that new data types or processing capabilities can be added simply by installing new plug-ins.</description>
+            </item>
+            <item recommended="true">
+                <name>gstreamer-plugins-good</name>
+                <summary>GStreamer Good Plug-ins</summary>
+                <description>GStreamer is a streaming media framework based on graphs of filters that operate on media data. Applications using this library can do anything media-related, from real-time sound processing to playing videos. Its plug-in-based architecture means that new data types or processing capabilities can be added simply by installing new plug-ins.</description>
+            </item>
+	    <item recommended="true">
+                <name>gstreamer-plugins-good-extra</name>
+                <summary>Complementary plugins for gstreamer-plugins-good</summary>
+                <description>This package provides complementary plugins for gstreamer-plugins-good.</description>
+            </item>
+            <item recommended="true">
+                <name>gstreamer-plugins-bad</name>
+                <summary>GStreamer Streaming-Media Framework Plug-Ins</summary>
+                <description>GStreamer is a streaming media framework based on graphs of filters that operate on media data. Applications using this library can do anything media-related,from real-time sound processing to playing videos. Its plug-in-based architecture means that new data types or processing capabilities can be added simply by installing new plug-ins.</description>
+            </item>
+	    <item recommended="true">
+                <name>gstreamer-plugins-bad-orig-addon</name>
+                <summary>GStreamer Streaming-Media Framework Plug-Ins</summary>
+                <description>GStreamer is a streaming media framework based on graphs of filters that operate on media data. Applications using this library can do anything media-related,from real-time sound processing to playing videos. Its plug-in-based architecture means that new data types or processing capabilities can be added simply by installing new plug-ins.</description>
+            </item>
+            <item recommended="true">
+                <name>gstreamer-plugins-ugly</name>
+                <summary>GStreamer Streaming-Media Framework Plug-Ins</summary>
+                <description>GStreamer is a streaming media framework based on graphs of filters that operate on media data. Applications using this library can do anything media-related,from real-time sound processing to playing videos. Its plug-in-based architecture means that new data types or processing capabilities can be added simply by installing new plug-ins.</description>
+            </item>
+	    <item recommended="true">
+                <name>gstreamer-plugins-ugly-orig-addon</name>
+                <summary>GStreamer Streaming-Media Framework Plug-Ins</summary>
+                <description>GStreamer is a streaming media framework based on graphs of filters that operate on media data. Applications using this library can do anything from real-time sound processing to playing videos and just about anything else media-related. Its plug-in-based architecture means that new data types or processing capabilities can be added simply by installing new plug-ins. This package contains well-written plug-ins that can't be shipped in openSUSE because of patent problems.</description>
+            </item>
+	    <item recommended="true">
+                <name>gstreamer-plugins-libav</name>
+                <summary>GStreamer Streaming-Media Framework Plug-Ins</summary>
+                <description>GStreamer is a streaming media framework based on graphs of filters that operate on media data. Applications using this library can do anything from real-time sound processing to playing videos and just about anything else media-related. Its plug-in-based architecture means that new data types or processing capabilities can be added simply by installing new plug-ins. This package contains well-written plug-ins that can't be shipped in openSUSE because of patent problems.</description>
+            </item>
+	   <item recommended="true">
+                <name>dvdauthor07</name>
+                <summary>A set of low-level tools to help you author a DVD</summary>
+                <description>dvdauthor is a program that will generate a DVD movie from a valid mpeg2 stream that should play when you put it in a DVD player.</description>
+            </item>	    
+            </software>
+   </group>
+    <group distversion="openSUSE Leap 15.1">
+        <name>Codecs for openSUSE GNOME</name>
+        <summary>Extra Multimedia Codecs and Proprietary Software for GNOME</summary>
+        <description>
+        An easy way to install a selection of popular multimedia codecs
+    </description>
+        <remainSubscribed/>
+        <repositories>
+            <repository recommended="true" format="auto">
+                <name>Packman Repository</name>
+                <summary>Packman Software Repository</summary>
+                <description>Packman build software packages to enable users to easily install and remove software on Linux. More specifically, they do so for software that is not shipped as part of distributions or that are shipped as an outdated version.</description>
+                <url>http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_15.1/</url>
+            </repository>
+            <repository recommended="true" format="auto">
+                <name>libdvdcss repository</name>
+                <summary>Repository with libdvdcss</summary>
+                <description>Encrypted DVD support</description>
+                <url>http://opensuse-guide.org/repo/openSUSE_Leap_15.1/</url>
+	      </repository>
+        </repositories>
+        <software>
+            <item recommended="true">
+                <name>libdvdcss2</name>
+                <summary>Select this to be able to play Encrypted DVDs.</summary>
+                <description>A simple library designed for accessing DVDs without having to bother about the decryption. Install this to be able to play Encrypted DVDs.</description>
+	      </item>
+            <item recommended="true">
+                <name>flash-player</name>
+                <summary>Macromedia Flash Plug-In</summary>
+                <description>This package contains Macromedia's Flash plug-in for the supported Web browsers. This includes Netcape6, Mozilla (all Gecko browsers), and Konqueror. Netscape 4 is not able to use Flash 6.</description>
+            </item>
+            <item recommended="true">
+                <name>ffmpeg</name>
+                <summary>Hyper fast MPEG1/MPEG4/H263/RV and AC3/MPEG audio encoder</summary>
+                <description>Hyper fast MPEG1/MPEG4/H263/RV and AC3/MPEG audio encoder.</description>
+            </item>
+            <item recommended="false">
+                <name>lame</name>
+                <summary>LAME adds support for encoding audio data into the MP3 format</summary>
+                <description>LAME is an educational tool to be used for learning about MP3 encoding.  The goal of the LAME project is to use the open source model to improve the psycho acoustics, noise shaping and speed of MP3.  Another goal of the LAME project is to use these improvements for the basis of a patent free audio compression codec for the GNU project.</description>
+            </item>
+            <item recommended="true">
+                <name>gstreamer-plugins-base</name>
+                <summary>GStreamer plugins base</summary>
+                <description>GStreamer is a streaming media framework based on graphs of filters that operate on media data. Applications using this library can do anything media-related, from real-time sound processing to playing videos. Its plug-in-based architecture means that new data types or processing capabilities can be added simply by installing new plug-ins.</description>
+            </item>
+            <item recommended="true">
+                <name>gstreamer-plugins-good</name>
+                <summary>GStreamer Good Plug-ins</summary>
+                <description>GStreamer is a streaming media framework based on graphs of filters that operate on media data. Applications using this library can do anything media-related, from real-time sound processing to playing videos. Its plug-in-based architecture means that new data types or processing capabilities can be added simply by installing new plug-ins.</description>
+            </item>
+	    <item recommended="true">
+                <name>gstreamer-plugins-good-extra</name>
+                <summary>Complementary plugins for gstreamer-plugins-good</summary>
+                <description>This package provides complementary plugins for gstreamer-plugins-good.</description>
+            </item>
+            <item recommended="true">
+                <name>gstreamer-plugins-bad</name>
+                <summary>GStreamer Streaming-Media Framework Plug-Ins</summary>
+                <description>GStreamer is a streaming media framework based on graphs of filters that operate on media data. Applications using this library can do anything media-related,from real-time sound processing to playing videos. Its plug-in-based architecture means that new data types or processing capabilities can be added simply by installing new plug-ins.</description>
+            </item>
+	    <item recommended="true">
+                <name>gstreamer-plugins-bad-orig-addon</name>
+                <summary>GStreamer Streaming-Media Framework Plug-Ins</summary>
+                <description>GStreamer is a streaming media framework based on graphs of filters that operate on media data. Applications using this library can do anything media-related,from real-time sound processing to playing videos. Its plug-in-based architecture means that new data types or processing capabilities can be added simply by installing new plug-ins.</description>
+            </item>
+            <item recommended="true">
+                <name>gstreamer-plugins-ugly</name>
+                <summary>GStreamer Streaming-Media Framework Plug-Ins</summary>
+                <description>GStreamer is a streaming media framework based on graphs of filters that operate on media data. Applications using this library can do anything media-related,from real-time sound processing to playing videos. Its plug-in-based architecture means that new data types or processing capabilities can be added simply by installing new plug-ins.</description>
+            </item>
+	    <item recommended="true">
+                <name>gstreamer-plugins-ugly-orig-addon</name>
+                <summary>GStreamer Streaming-Media Framework Plug-Ins</summary>
+                <description>GStreamer is a streaming media framework based on graphs of filters that operate on media data. Applications using this library can do anything from real-time sound processing to playing videos and just about anything else media-related. Its plug-in-based architecture means that new data types or processing capabilities can be added simply by installing new plug-ins. This package contains well-written plug-ins that can't be shipped in openSUSE because of patent problems.</description>
+            </item>
+	    <item recommended="true">
+                <name>gstreamer-plugins-libav</name>
+                <summary>GStreamer Streaming-Media Framework Plug-Ins</summary>
+                <description>GStreamer is a streaming media framework based on graphs of filters that operate on media data. Applications using this library can do anything from real-time sound processing to playing videos and just about anything else media-related. Its plug-in-based architecture means that new data types or processing capabilities can be added simply by installing new plug-ins. This package contains well-written plug-ins that can't be shipped in openSUSE because of patent problems.</description>
+            </item>
+	   <item recommended="true">
+                <name>dvdauthor07</name>
+                <summary>A set of low-level tools to help you author a DVD</summary>
+                <description>dvdauthor is a program that will generate a DVD movie from a valid mpeg2 stream that should play when you put it in a DVD player.</description>
+            </item>	    
+            </software>
+      </group>
+<group distversion="openSUSE Leap 15.0">
+        <name>Codecs for openSUSE GNOME</name>
+        <summary>Extra Multimedia Codecs and Proprietary Software for GNOME</summary>
+        <description>
+        An easy way to install a selection of popular multimedia codecs
+    </description>
+        <remainSubscribed/>
+        <repositories>
+            <repository recommended="true" format="auto">
+                <name>Packman Repository</name>
+                <summary>Packman Software Repository</summary>
+                <description>Packman build software packages to enable users to easily install and remove software on Linux. More specifically, they do so for software that is not shipped as part of distributions or that are shipped as an outdated version.</description>
+                <url>http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_15.0/</url>
+            </repository>
+            <repository recommended="true" format="auto">
+                <name>libdvdcss repository</name>
+                <summary>Repository with libdvdcss</summary>
+                <description>Encrypted DVD support</description>
+                <url>http://opensuse-guide.org/repo/openSUSE_Leap_15.0/</url>
+	      </repository>
+        </repositories>
+        <software>
+            <item recommended="true">
+                <name>libdvdcss2</name>
+                <summary>Select this to be able to play Encrypted DVDs.</summary>
+                <description>A simple library designed for accessing DVDs without having to bother about the decryption. Install this to be able to play Encrypted DVDs.</description>
+	      </item>
+            <item recommended="true">
+                <name>flash-player</name>
+                <summary>Macromedia Flash Plug-In</summary>
+                <description>This package contains Macromedia's Flash plug-in for the supported Web browsers. This includes Netcape6, Mozilla (all Gecko browsers), and Konqueror. Netscape 4 is not able to use Flash 6.</description>
+            </item>
+            <item recommended="true">
+                <name>ffmpeg</name>
+                <summary>Hyper fast MPEG1/MPEG4/H263/RV and AC3/MPEG audio encoder</summary>
+                <description>Hyper fast MPEG1/MPEG4/H263/RV and AC3/MPEG audio encoder.</description>
+            </item>
+            <item recommended="false">
+                <name>lame</name>
+                <summary>LAME adds support for encoding audio data into the MP3 format</summary>
+                <description>LAME is an educational tool to be used for learning about MP3 encoding.  The goal of the LAME project is to use the open source model to improve the psycho acoustics, noise shaping and speed of MP3.  Another goal of the LAME project is to use these improvements for the basis of a patent free audio compression codec for the GNU project.</description>
+            </item>
+            <item recommended="true">
+                <name>gstreamer-plugins-base</name>
+                <summary>GStreamer plugins base</summary>
+                <description>GStreamer is a streaming media framework based on graphs of filters that operate on media data. Applications using this library can do anything media-related, from real-time sound processing to playing videos. Its plug-in-based architecture means that new data types or processing capabilities can be added simply by installing new plug-ins.</description>
+            </item>
+            <item recommended="true">
+                <name>gstreamer-plugins-good</name>
+                <summary>GStreamer Good Plug-ins</summary>
+                <description>GStreamer is a streaming media framework based on graphs of filters that operate on media data. Applications using this library can do anything media-related, from real-time sound processing to playing videos. Its plug-in-based architecture means that new data types or processing capabilities can be added simply by installing new plug-ins.</description>
+            </item>
+	    <item recommended="true">
+                <name>gstreamer-plugins-good-extra</name>
+                <summary>Complementary plugins for gstreamer-plugins-good</summary>
+                <description>This package provides complementary plugins for gstreamer-plugins-good.</description>
+            </item>
+            <item recommended="true">
+                <name>gstreamer-plugins-bad</name>
+                <summary>GStreamer Streaming-Media Framework Plug-Ins</summary>
+                <description>GStreamer is a streaming media framework based on graphs of filters that operate on media data. Applications using this library can do anything media-related,from real-time sound processing to playing videos. Its plug-in-based architecture means that new data types or processing capabilities can be added simply by installing new plug-ins.</description>
+            </item>
+	    <item recommended="true">
+                <name>gstreamer-plugins-bad-orig-addon</name>
+                <summary>GStreamer Streaming-Media Framework Plug-Ins</summary>
+                <description>GStreamer is a streaming media framework based on graphs of filters that operate on media data. Applications using this library can do anything media-related,from real-time sound processing to playing videos. Its plug-in-based architecture means that new data types or processing capabilities can be added simply by installing new plug-ins.</description>
+            </item>
+            <item recommended="true">
+                <name>gstreamer-plugins-ugly</name>
+                <summary>GStreamer Streaming-Media Framework Plug-Ins</summary>
+                <description>GStreamer is a streaming media framework based on graphs of filters that operate on media data. Applications using this library can do anything media-related,from real-time sound processing to playing videos. Its plug-in-based architecture means that new data types or processing capabilities can be added simply by installing new plug-ins.</description>
+            </item>
+	    <item recommended="true">
+                <name>gstreamer-plugins-ugly-orig-addon</name>
+                <summary>GStreamer Streaming-Media Framework Plug-Ins</summary>
+                <description>GStreamer is a streaming media framework based on graphs of filters that operate on media data. Applications using this library can do anything from real-time sound processing to playing videos and just about anything else media-related. Its plug-in-based architecture means that new data types or processing capabilities can be added simply by installing new plug-ins. This package contains well-written plug-ins that can't be shipped in openSUSE because of patent problems.</description>
+            </item>
+	    <item recommended="true">
+                <name>gstreamer-plugins-libav</name>
+                <summary>GStreamer Streaming-Media Framework Plug-Ins</summary>
+                <description>GStreamer is a streaming media framework based on graphs of filters that operate on media data. Applications using this library can do anything from real-time sound processing to playing videos and just about anything else media-related. Its plug-in-based architecture means that new data types or processing capabilities can be added simply by installing new plug-ins. This package contains well-written plug-ins that can't be shipped in openSUSE because of patent problems.</description>
+            </item>
+	   <item recommended="true">
+                <name>dvdauthor07</name>
+                <summary>A set of low-level tools to help you author a DVD</summary>
+                <description>dvdauthor is a program that will generate a DVD movie from a valid mpeg2 stream that should play when you put it in a DVD player.</description>
+            </item>	    
+            </software>
+      </group>    
+<group distversion="openSUSE Leap 42.3">
+        <name>Codecs for openSUSE GNOME</name>
+        <summary>Extra Multimedia Codecs and Proprietary Software for GNOME</summary>
+        <description>
+        An easy way to install a selection of popular multimedia codecs
+    </description>
+        <remainSubscribed/>
+        <repositories>
+            <repository recommended="true" format="auto">
+                <name>Packman Repository</name>
+                <summary>Packman Software Repository</summary>
+                <description>Packman build software packages to enable users to easily install and remove software on Linux. More specifically, they do so for software that is not shipped as part of distributions or that are shipped as an outdated version.</description>
+                <url>http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_42.3/</url>
+            </repository>
+            <repository recommended="true" format="auto">
+                <name>libdvdcss repository</name>
+                <summary>Repository with libdvdcss</summary>
+                <description>Encrypted DVD support</description>
+                <url>http://opensuse-guide.org/repo/openSUSE_Leap_42.3/</url>
+	      </repository>
+        </repositories>
+        <software>
+            <item recommended="true">
+                <name>libdvdcss2</name>
+                <summary>Select this to be able to play Encrypted DVDs.</summary>
+                <description>A simple library designed for accessing DVDs without having to bother about the decryption. Install this to be able to play Encrypted DVDs.</description>
+	      </item>
+            <item recommended="true">
+                <name>flash-player</name>
+                <summary>Macromedia Flash Plug-In</summary>
+                <description>This package contains Macromedia's Flash plug-in for the supported Web browsers. This includes Netcape6, Mozilla (all Gecko browsers), and Konqueror. Netscape 4 is not able to use Flash 6.</description>
+            </item>
+            <item recommended="true">
+                <name>ffmpeg</name>
+                <summary>Hyper fast MPEG1/MPEG4/H263/RV and AC3/MPEG audio encoder</summary>
+                <description>Hyper fast MPEG1/MPEG4/H263/RV and AC3/MPEG audio encoder.</description>
+            </item>
+            <item recommended="false">
+                <name>lame</name>
+                <summary>LAME adds support for encoding audio data into the MP3 format</summary>
+                <description>LAME is an educational tool to be used for learning about MP3 encoding.  The goal of the LAME project is to use the open source model to improve the psycho acoustics, noise shaping and speed of MP3.  Another goal of the LAME project is to use these improvements for the basis of a patent free audio compression codec for the GNU project.</description>
+            </item>
+            <item recommended="true">
+                <name>gstreamer-plugins-base</name>
+                <summary>GStreamer plugins base</summary>
+                <description>GStreamer is a streaming media framework based on graphs of filters that operate on media data. Applications using this library can do anything media-related, from real-time sound processing to playing videos. Its plug-in-based architecture means that new data types or processing capabilities can be added simply by installing new plug-ins.</description>
+            </item>
+            <item recommended="true">
+                <name>gstreamer-plugins-good</name>
+                <summary>GStreamer Good Plug-ins</summary>
+                <description>GStreamer is a streaming media framework based on graphs of filters that operate on media data. Applications using this library can do anything media-related, from real-time sound processing to playing videos. Its plug-in-based architecture means that new data types or processing capabilities can be added simply by installing new plug-ins.</description>
+            </item>
+	    <item recommended="true">
+                <name>gstreamer-plugins-good-extra</name>
+                <summary>Complementary plugins for gstreamer-plugins-good</summary>
+                <description>This package provides complementary plugins for gstreamer-plugins-good.</description>
+            </item>
+            <item recommended="true">
+                <name>gstreamer-plugins-bad</name>
+                <summary>GStreamer Streaming-Media Framework Plug-Ins</summary>
+                <description>GStreamer is a streaming media framework based on graphs of filters that operate on media data. Applications using this library can do anything media-related,from real-time sound processing to playing videos. Its plug-in-based architecture means that new data types or processing capabilities can be added simply by installing new plug-ins.</description>
+            </item>
+	    <item recommended="true">
+                <name>gstreamer-plugins-bad-orig-addon</name>
+                <summary>GStreamer Streaming-Media Framework Plug-Ins</summary>
+                <description>GStreamer is a streaming media framework based on graphs of filters that operate on media data. Applications using this library can do anything media-related,from real-time sound processing to playing videos. Its plug-in-based architecture means that new data types or processing capabilities can be added simply by installing new plug-ins.</description>
+            </item>
+            <item recommended="true">
+                <name>gstreamer-plugins-ugly</name>
+                <summary>GStreamer Streaming-Media Framework Plug-Ins</summary>
+                <description>GStreamer is a streaming media framework based on graphs of filters that operate on media data. Applications using this library can do anything media-related,from real-time sound processing to playing videos. Its plug-in-based architecture means that new data types or processing capabilities can be added simply by installing new plug-ins.</description>
+            </item>
+	    <item recommended="true">
+                <name>gstreamer-plugins-ugly-orig-addon</name>
+                <summary>GStreamer Streaming-Media Framework Plug-Ins</summary>
+                <description>GStreamer is a streaming media framework based on graphs of filters that operate on media data. Applications using this library can do anything from real-time sound processing to playing videos and just about anything else media-related. Its plug-in-based architecture means that new data types or processing capabilities can be added simply by installing new plug-ins. This package contains well-written plug-ins that can't be shipped in openSUSE because of patent problems.</description>
+            </item>
+	    <item recommended="true">
+                <name>gstreamer-plugins-libav</name>
+                <summary>GStreamer Streaming-Media Framework Plug-Ins</summary>
+                <description>GStreamer is a streaming media framework based on graphs of filters that operate on media data. Applications using this library can do anything from real-time sound processing to playing videos and just about anything else media-related. Its plug-in-based architecture means that new data types or processing capabilities can be added simply by installing new plug-ins. This package contains well-written plug-ins that can't be shipped in openSUSE because of patent problems.</description>
+            </item>
+	   <item recommended="true">
+                <name>dvdauthor07</name>
+                <summary>A set of low-level tools to help you author a DVD</summary>
+                <description>dvdauthor is a program that will generate a DVD movie from a valid mpeg2 stream that should play when you put it in a DVD player.</description>
+            </item>	    
+            </software>
+      </group>
+        <group distversion="openSUSE Leap 42.2">
+        <name>Codecs for openSUSE GNOME</name>
+        <summary>Extra Multimedia Codecs and Proprietary Software for GNOME</summary>
+        <description>
+        An easy way to install a selection of popular multimedia codecs
+    </description>
+        <remainSubscribed/>
+        <repositories>
+            <repository recommended="true" format="auto">
+                <name>Packman Repository</name>
+                <summary>Packman Software Repository</summary>
+                <description>Packman build software packages to enable users to easily install and remove software on Linux. More specifically, they do so for software that is not shipped as part of distributions or that are shipped as an outdated version.</description>
+                <url>http://ftp.gwdg.de/pub/linux/packman/suse/openSUSE_Leap_42.2</url>
+            </repository>
+            <repository recommended="true" format="auto">
+                <name>libdvdcss repository</name>
+                <summary>Repository with libdvdcss</summary>
+                <description>Encrypted DVD support</description>
+                <url>http://opensuse-guide.org/repo/openSUSE_Leap_42.2/</url>
+	      </repository>
+        </repositories>
+        <software>
+            <item recommended="true">
+                <name>libdvdcss2</name>
+                <summary>Select this to be able to play Encrypted DVDs.</summary>
+                <description>A simple library designed for accessing DVDs without having to bother about the decryption. Install this to be able to play Encrypted DVDs.</description>
+	      </item>
+            <item recommended="true">
+                <name>flash-player</name>
+                <summary>Macromedia Flash Plug-In</summary>
+                <description>This package contains Macromedia's Flash plug-in for the supported Web browsers. This includes Netcape6, Mozilla (all Gecko browsers), and Konqueror. Netscape 4 is not able to use Flash 6.</description>
+            </item>
+            <item recommended="true">
+                <name>ffmpeg</name>
+                <summary>Hyper fast MPEG1/MPEG4/H263/RV and AC3/MPEG audio encoder</summary>
+                <description>Hyper fast MPEG1/MPEG4/H263/RV and AC3/MPEG audio encoder.</description>
+            </item>
+            <item recommended="false">
+                <name>lame</name>
+                <summary>LAME adds support for encoding audio data into the MP3 format</summary>
+                <description>LAME is an educational tool to be used for learning about MP3 encoding.  The goal of the LAME project is to use the open source model to improve the psycho acoustics, noise shaping and speed of MP3.  Another goal of the LAME project is to use these improvements for the basis of a patent free audio compression codec for the GNU project.</description>
+            </item>
+            <item recommended="true">
+                <name>gstreamer-plugins-base</name>
+                <summary>GStreamer plugins base</summary>
+                <description>GStreamer is a streaming media framework based on graphs of filters that operate on media data. Applications using this library can do anything media-related, from real-time sound processing to playing videos. Its plug-in-based architecture means that new data types or processing capabilities can be added simply by installing new plug-ins.</description>
+            </item>
+            <item recommended="true">
+                <name>gstreamer-plugins-good</name>
+                <summary>GStreamer Good Plug-ins</summary>
+                <description>GStreamer is a streaming media framework based on graphs of filters that operate on media data. Applications using this library can do anything media-related, from real-time sound processing to playing videos. Its plug-in-based architecture means that new data types or processing capabilities can be added simply by installing new plug-ins.</description>
+            </item>
+	    <item recommended="true">
+                <name>gstreamer-plugins-good-extra</name>
+                <summary>Complementary plugins for gstreamer-plugins-good</summary>
+                <description>This package provides complementary plugins for gstreamer-plugins-good.</description>
+            </item>
+            <item recommended="true">
+                <name>gstreamer-plugins-bad</name>
+                <summary>GStreamer Streaming-Media Framework Plug-Ins</summary>
+                <description>GStreamer is a streaming media framework based on graphs of filters that operate on media data. Applications using this library can do anything media-related,from real-time sound processing to playing videos. Its plug-in-based architecture means that new data types or processing capabilities can be added simply by installing new plug-ins.</description>
+            </item>
+	    <item recommended="true">
+                <name>gstreamer-plugins-bad-orig-addon</name>
+                <summary>GStreamer Streaming-Media Framework Plug-Ins</summary>
+                <description>GStreamer is a streaming media framework based on graphs of filters that operate on media data. Applications using this library can do anything media-related,from real-time sound processing to playing videos. Its plug-in-based architecture means that new data types or processing capabilities can be added simply by installing new plug-ins.</description>
+            </item>
+            <item recommended="true">
+                <name>gstreamer-plugins-ugly</name>
+                <summary>GStreamer Streaming-Media Framework Plug-Ins</summary>
+                <description>GStreamer is a streaming media framework based on graphs of filters that operate on media data. Applications using this library can do anything media-related,from real-time sound processing to playing videos. Its plug-in-based architecture means that new data types or processing capabilities can be added simply by installing new plug-ins.</description>
+            </item>
+	    <item recommended="true">
+                <name>gstreamer-plugins-ugly-orig-addon</name>
+                <summary>GStreamer Streaming-Media Framework Plug-Ins</summary>
+                <description>GStreamer is a streaming media framework based on graphs of filters that operate on media data. Applications using this library can do anything from real-time sound processing to playing videos and just about anything else media-related. Its plug-in-based architecture means that new data types or processing capabilities can be added simply by installing new plug-ins. This package contains well-written plug-ins that can't be shipped in openSUSE because of patent problems.</description>
+            </item>
+	    <item recommended="true">
+                <name>gstreamer-plugins-libav</name>
+                <summary>GStreamer Streaming-Media Framework Plug-Ins</summary>
+                <description>GStreamer is a streaming media framework based on graphs of filters that operate on media data. Applications using this library can do anything from real-time sound processing to playing videos and just about anything else media-related. Its plug-in-based architecture means that new data types or processing capabilities can be added simply by installing new plug-ins. This package contains well-written plug-ins that can't be shipped in openSUSE because of patent problems.</description>
+            </item>
+	   <item recommended="true">
+                <name>dvdauthor07</name>
+                <summary>A set of low-level tools to help you author a DVD</summary>
+                <description>dvdauthor is a program that will generate a DVD movie from a valid mpeg2 stream that should play when you put it in a DVD player.</description>
+            </item>	    
+            </software>
+      </group>
+      <group>
+        <name>Codecs for openSUSE Tumbleweed with GNOME</name>
+        <summary>Extra Multimedia Codecs and Proprietary Software for GNOME</summary>
+        <description>
+        An easy way to install a selection of popular multimedia codecs
+    </description>
+        <remainSubscribed/>
+        <repositories>
+            <repository recommended="true" format="auto">
+                <name>Packman Repository</name>
+                <summary>Packman Software Repository</summary>
+                <description>Packman build software packages to enable users to easily install and remove software on Linux. More specifically, they do so for software that is not shipped as part of distributions or that are shipped as an outdated version.</description>
+                <url>http://ftp.gwdg.de/pub/linux/packman/suse/openSUSE_Tumbleweed/</url>
+            </repository>
+            <repository recommended="true" format="auto">
+                <name>libdvdcss repository</name>
+                <summary>Repository with libdvdcss</summary>
+                <description>Encrypted DVD support</description>
+                <url>http://opensuse-guide.org/repo/openSUSE_Tumbleweed/</url>
+	      </repository>
+      </repositories>
+        <software>
+            <item recommended="true">
+                <name>libdvdcss2</name>
+                <summary>Select this to be able to play Encrypted DVDs.</summary>
+                <description>A simple library designed for accessing DVDs without having to bother about the decryption. Install this to be able to play Encrypted DVDs.</description>
+	      </item>
+            <item recommended="true">
+                <name>flash-player</name>
+                <summary>Macromedia Flash Plug-In</summary>
+                <description>This package contains Macromedia's Flash plug-in for the supported Web browsers. This includes Netcape6, Mozilla (all Gecko browsers), and Konqueror. Netscape 4 is not able to use Flash 6.</description>
+            </item>
+            <item recommended="true">
+                <name>ffmpeg</name>
+                <summary>Hyper fast MPEG1/MPEG4/H263/RV and AC3/MPEG audio encoder</summary>
+                <description>Hyper fast MPEG1/MPEG4/H263/RV and AC3/MPEG audio encoder.</description>
+            </item>
+            <item recommended="false">
+                <name>lame</name>
+                <summary>LAME adds support for encoding audio data into the MP3 format</summary>
+                <description>LAME is an educational tool to be used for learning about MP3 encoding.  The goal of the LAME project is to use the open source model to improve the psycho acoustics, noise shaping and speed of MP3.  Another goal of the LAME project is to use these improvements for the basis of a patent free audio compression codec for the GNU project.</description>
+            </item>
+            <item recommended="true">
+                <name>gstreamer-plugins-base</name>
+                <summary>GStreamer plugins base</summary>
+                <description>GStreamer is a streaming media framework based on graphs of filters that operate on media data. Applications using this library can do anything media-related, from real-time sound processing to playing videos. Its plug-in-based architecture means that new data types or processing capabilities can be added simply by installing new plug-ins.</description>
+            </item>
+            <item recommended="true">
+                <name>gstreamer-plugins-good</name>
+                <summary>GStreamer Good Plug-ins</summary>
+                <description>GStreamer is a streaming media framework based on graphs of filters that operate on media data. Applications using this library can do anything media-related, from real-time sound processing to playing videos. Its plug-in-based architecture means that new data types or processing capabilities can be added simply by installing new plug-ins.</description>
+            </item>
+	    <item recommended="true">
+                <name>gstreamer-plugins-good-extra</name>
+                <summary>Complementary plugins for gstreamer-plugins-good</summary>
+                <description>This package provides complementary plugins for gstreamer-plugins-good.</description>
+            </item>
+            <item recommended="true">
+                <name>gstreamer-plugins-bad</name>
+                <summary>GStreamer Streaming-Media Framework Plug-Ins</summary>
+                <description>GStreamer is a streaming media framework based on graphs of filters that operate on media data. Applications using this library can do anything media-related,from real-time sound processing to playing videos. Its plug-in-based architecture means that new data types or processing capabilities can be added simply by installing new plug-ins.</description>
+            </item>
+	    <item recommended="true">
+                <name>gstreamer-plugins-bad-orig-addon</name>
+                <summary>GStreamer Streaming-Media Framework Plug-Ins</summary>
+                <description>GStreamer is a streaming media framework based on graphs of filters that operate on media data. Applications using this library can do anything media-related,from real-time sound processing to playing videos. Its plug-in-based architecture means that new data types or processing capabilities can be added simply by installing new plug-ins.</description>
+            </item>
+            <item recommended="true">
+                <name>gstreamer-plugins-ugly</name>
+                <summary>GStreamer Streaming-Media Framework Plug-Ins</summary>
+                <description>GStreamer is a streaming media framework based on graphs of filters that operate on media data. Applications using this library can do anything media-related,from real-time sound processing to playing videos. Its plug-in-based architecture means that new data types or processing capabilities can be added simply by installing new plug-ins.</description>
+            </item>
+	    <item recommended="true">
+                <name>gstreamer-plugins-ugly-orig-addon</name>
+                <summary>GStreamer Streaming-Media Framework Plug-Ins</summary>
+                <description>GStreamer is a streaming media framework based on graphs of filters that operate on media data. Applications using this library can do anything from real-time sound processing to playing videos and just about anything else media-related. Its plug-in-based architecture means that new data types or processing capabilities can be added simply by installing new plug-ins. This package contains well-written plug-ins that can't be shipped in openSUSE because of patent problems.</description>
+            </item>
+	    <item recommended="true">
+                <name>gstreamer-plugins-libav</name>
+                <summary>GStreamer Streaming-Media Framework Plug-Ins</summary>
+                <description>GStreamer is a streaming media framework based on graphs of filters that operate on media data. Applications using this library can do anything from real-time sound processing to playing videos and just about anything else media-related. Its plug-in-based architecture means that new data types or processing capabilities can be added simply by installing new plug-ins. This package contains well-written plug-ins that can't be shipped in openSUSE because of patent problems.</description>
+            </item>
+	   <item recommended="true">
+                <name>dvdauthor07</name>
+                <summary>A set of low-level tools to help you author a DVD</summary>
+                <description>dvdauthor is a program that will generate a DVD movie from a valid mpeg2 stream that should play when you put it in a DVD player.</description>
+            </item>	    
+            </software>
+      </group>
+    </metapackage>
