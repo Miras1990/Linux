@@ -1,0 +1,27 @@
+Xrandr - konfiguracja monitora
+
+Uzyskanie informacji o podłączonych monitorach:
+xrandr -q
+
+Bardziej szczegółowe informacje:
+xrandr --verbose
+
+Sprawdzenie parametrów dla oczekiwanej rozdzielczości np. 2560x1080 75hz
+cvt 2560 1080 75
+
+Wynik:
+# 2560x1080 74.94 Hz (CVT) hsync: 84.68 kHz; pclk: 294.00 MHz
+Modeline "2560x1080_75.00"  294.00  2560 2744 3016 3472  1080 1083 1093 1130 -hsync +vsync
+
+Do utworzenia nowej rozdzielczości użyta zostanie uzyskana wcześniej wartość Modeline:
+xrandr --newmode "2560x1080_75.00"  294.00  2560 2744 3016 3472  1080 1083 1093 1130 -hsync +vsync
+
+Dodanie do listy obsługiwanych rozdzielczości:
+xrandr  --addmode HDMI2 2560x1080_75.00
+
+Jeśli nie wyskoczą żadne komunikaty błędów, to można włączyć tę rozdzielczość:
+xrandr --output HDMI2 --mode 2560x1080_75.00
+
+
+Link:
+https://dug.net.pl/tekst/210/ustawienia_parametrow_pracy_monitorow_za_pomoca_xrandr/
