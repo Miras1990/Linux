@@ -1,0 +1,17 @@
+Look and Feel : Materia Dark
+
+Cursor Theme : breeze snow
+
+colors : Aritim Dark
+
+Icons : La Capitaine	https://github.com/keeferrourke/la-capitaine-icon-theme
+
+Window Decoration : Sierra Breeze	https://github.com/ishovkun/SierraBreeze
+
+Gtk Applications Theme : Juno Ocean	https://github.com/EliverLara/Juno
+
+Wallpaper : https://www.artstation.com/artwork/nA9Lr
+
+Widgets I used : Kde Global Menus (Default), Active window controls(for adding the controls to the top panel and to remove the title bar when the window is maximized )
+
+dock : Latte
