@@ -1,0 +1,8 @@
+BTRFS:
+noatime,ssd
+
+EXT4:
+noatime,discard
+
+XFS:
+noatime,discard
