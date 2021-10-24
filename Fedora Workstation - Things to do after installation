@@ -1,0 +1,80 @@
+This is my configuration for linux fedora based on my own experience and various tutorials.
+
+
+RPM Fusion repository: https://rpmfusion.org/Configuration
+sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+
+AppStream metadata
+sudo dnf groupupdate core
+
+Multimedia and codecs
+sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
+sudo dnf groupupdate sound-and-video
+sudo dnf install gstreamer1-plugins-* ffmpeg vlc
+
+Tainted repos
+sudo dnf install rpmfusion-free-release-tainted
+sudo dnf install libdvdcss
+
+
+Flatpak setup: https://flatpak.org/setup/Fedora/
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+
+Install VAAPI - Intel GPU
+lspci | grep VGA
+sudo dnf install libva libva-intel-driver libva-vdpau-driver libva-utils libva-intel-hybrid-driver
+
+
+Thermald (Intel Thermal Daemon): https://github.com/intel/thermal_daemon 
+sudo dnf groupinstall "Development Tools" "C Development Tools and Libraries"
+sudo yum install automake gcc gcc-c++ glib-devel libxml2-devel dbus-glib-devel autoconf-archive gtk-doc upower-devel xz-devel libevdev-devel
+
+Download latest release: https://github.com/intel/thermal_daemon/tags
+./autogen.sh prefix=/
+make
+sudo make install
+
+1. Start service: sudo systemctl start thermald.service
+2. Get Status: sudo systemctl status thermald.service
+3. Stop service: sudo systemctl stop thermald.service
+4. Terminate using DBUS I/F: sudo test/test_pref.sh  (and select "TERMINATE" choice)
+5. Enable Service: sudo systemctl enable thermald
+6. Start service: sudo systemctl start thermald.service
+
+
+Power profiles daemon: https://gitlab.freedesktop.org/hadess/power-profiles-daemon
+sudo dnf install power-profiles-daemon
+
+Powertop: https://01.org/powertop/overview
+sudo dnf install powertop
+
+Google Chrome: https://www.google.com/linuxrepositories/
+wget https://dl.google.com/linux/linux_signing_key.pub
+sudo rpm --import linux_signing_key.pub
+rpm -qi gpg-pubkey-7fac5991-*
+
+
+Chromium-freeworld - VAAPI Support: https://major.io/2019/10/20/install-chromium-with-vaapi-on-fedora-30/
+sudo dnf -y install chromium-freeworld
+Enable DRM:
+sudo cp /opt/google/chrome/libwidevinecdm.so /usr/lib64/chromium-freeworld/
+
+
+Steam:
+sudo dnf install steam libtxc_dxtn.i686 ibtxc_dxtn.x86_64
+
+
+GRUB Setup:
+GRUB_CMDLINE_LINUX="rhgb quiet acpi_osi=Linux pcie_aspm=force drm.vblankoffdelay=1 zswap.enabled=1 zswap.compressor=lz4 i915.enable_guc=2 scsi_mod.use_blk_mq=1 intel_iommu=on intel_pstate=passive mitigations=off"
+
+sudo grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg
+
+
+TRIM Support
+sudo systemctl enable fstrim.timer
+sudo systemctl start fstrim.timer
+sudo fstrim -v /
+
+
+
