@@ -52,6 +52,8 @@ sudo make install
 
 Power profiles daemon: https://gitlab.freedesktop.org/hadess/power-profiles-daemon
 sudo dnf install power-profiles-daemon
+sudo powerprofilesctl set power-saver or balanced
+
 
 Powertop: https://01.org/powertop/overview
 sudo dnf install powertop
@@ -223,6 +225,15 @@ git clone https://github.com/rafaelmardojai/firefox-gnome-theme/ /home/$USER/fed
 cd /home/$USER/fedora/firefox-gnome-theme
 ./scripts/install.sh
 
+Enable VAAPI in Firefox:
+media.ffmpeg.vaapi.enabled  true
+media.ffvpx.enabled  false
+media.rdd-vpx.enabled  false
+media.navigator.mediadatadecoder_vpx_enabled  true
+
+Other:
+layers.acceleration.force-enabled
+gfx.webrender.enabled
 
 
 Microsoft Fonts
