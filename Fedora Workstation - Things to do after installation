@@ -4,21 +4,28 @@ This is my configuration for linux fedora based on my own experience and various
 RPM Fusion repository: https://rpmfusion.org/Configuration
 sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
+
 AppStream metadata
 sudo dnf groupupdate core
 
+
 Multimedia and codecs
-sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
 sudo dnf groupupdate sound-and-video
-sudo dnf install gstreamer1-plugins-* ffmpeg vlc
+sudo dnf install -y libdvdcss
+sudo dnf install -y gstreamer1-plugins-{bad-\*,good-\*,ugly-\*,base} gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel ffmpeg gstreamer-ffmpeg 
+sudo dnf install -y lame\* --exclude=lame-devel
+sudo dnf group upgrade --with-optional Multimedia
+sudo dnf install ffmpeg vlc
+
 
 Tainted repos
 sudo dnf install rpmfusion-free-release-tainted
-sudo dnf install libdvdcss
+sudo dnf install dnf-plugins-core
 
 
 Flatpak setup: https://flatpak.org/setup/Fedora/
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak update
 
 
 Install VAAPI - Intel GPU
@@ -49,6 +56,69 @@ sudo dnf install power-profiles-daemon
 Powertop: https://01.org/powertop/overview
 sudo dnf install powertop
 
+
+GRUB Setup:
+GRUB_CMDLINE_LINUX="rhgb quiet acpi_osi=Linux pcie_aspm=force drm.vblankoffdelay=1 zswap.enabled=1 zswap.compressor=lz4 i915.enable_guc=2 scsi_mod.use_blk_mq=1 intel_iommu=on intel_pstate=passive mitigations=off"
+
+sudo grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg
+
+
+TRIM Support
+sudo systemctl enable fstrim.timer
+sudo systemctl start fstrim.timer
+sudo fstrim -v /
+
+
+DNF Flags:
+echo 'fastestmirror=1' | sudo tee -a /etc/dnf/dnf.conf
+echo 'max_parallel_downloads=10' | sudo tee -a /etc/dnf/dnf.conf
+echo 'deltarpm=true' | sudo tee -a /etc/dnf/dnf.conf
+cat /etc/dnf/dnf.conf
+
+
+Set Hostname
+hostnamectl set-hostname fedora
+
+
+Check Locales
+localectl status
+timedatectl
+
+
+Install updates and reboot
+sudo dnf upgrade --refresh
+sudo dnf check
+sudo dnf autoremove
+sudo fwupdmgr get-devices
+sudo fwupdmgr refresh --force
+sudo fwupdmgr get-updates
+sudo fwupdmgr update
+sudo reboot now
+
+
+Fish - A Friendly Interactive Shell: https://fedoramagazine.org/fish-a-friendly-interactive-shell/
+sudo dnf install -y fish util-linux-user
+chsh -s /usr/bin/fish
+
+Add the ~/.local/bin to my $PATH persistently in Fish
+mkdir -p /home/$USER/.local/bin
+set -Ua fish_user_paths /home/$USER/.local/bin
+bash -c 'echo $PATH'
+
+
+Gnome Extensions and Tweaks
+sudo dnf install gnome-extensions-app gnome-tweaks
+sudo dnf install gnome-shell-extension-appindicator
+https://extensions.gnome.org/extension/906/sound-output-device-chooser/
+
+
+Snap support
+sudo dnf install snapd
+sudo ln -s /var/lib/snapd/snap /snap
+sudo reboot now
+sudo snap refresh
+
+
 Google Chrome: https://www.google.com/linuxrepositories/
 wget https://dl.google.com/linux/linux_signing_key.pub
 sudo rpm --import linux_signing_key.pub
@@ -65,16 +135,118 @@ Steam:
 sudo dnf install steam libtxc_dxtn.i686 ibtxc_dxtn.x86_64
 
 
-GRUB Setup:
-GRUB_CMDLINE_LINUX="rhgb quiet acpi_osi=Linux pcie_aspm=force drm.vblankoffdelay=1 zswap.enabled=1 zswap.compressor=lz4 i915.enable_guc=2 scsi_mod.use_blk_mq=1 intel_iommu=on intel_pstate=passive mitigations=off"
+POP OS Theme
 
-sudo grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg
-
-
-TRIM Support
-sudo systemctl enable fstrim.timer
-sudo systemctl start fstrim.timer
-sudo fstrim -v /
+Install Pop-Shell Tiling Extension:
+sudo dnf install gnome-shell-extension-pop-shell
 
 
+Pop shell keyboard shortcuts:
+sudo dnf install -y make cargo rust gtk3-devel
+git clone https://github.com/pop-os/shell-shortcuts /home/$USER/fedora/pop-theme/shell-shortcuts
+cd /home/$USER/fedora/pop-theme/shell-shortcuts
+make
+sudo make install
+pop-shell-shortcuts
 
+
+Pop GTK theme:
+sudo dnf install -y sassc meson glib2-devel
+git clone https://github.com/pop-os/gtk-theme /home/$USER/fedora/pop-theme/gtk-theme
+cd /home/$USER/fedora/pop-theme/gtk-theme
+meson build && cd build
+ninja
+sudo ninja install
+gsettings set org.gnome.desktop.interface gtk-theme "Pop"
+
+
+Pop icon theme:
+git clone https://github.com/pop-os/icon-theme /home/$USER/fedora/pop-theme/icon-theme
+cd /home/$USER/fedora/pop-theme/icon-theme
+meson build
+sudo ninja -C "build" install
+gsettings set org.gnome.desktop.interface icon-theme "Pop"
+gsettings set org.gnome.desktop.interface cursor-theme "Pop"
+
+
+Pop fonts:
+sudo dnf install -y fira-code-fonts 'mozilla-fira*' 'google-roboto*'
+Go into Gnome Tweaks and make the following changes in Fonts:
+1. Interface Text: Fira Sans Book 10
+2. Document Text: Roboto Slab Regular 11
+3. Monospace Text: Fira Mono Regular 11
+4. Legacy Window Titles: Fira Sans SemiBold 10
+5. Hinting: Slight
+6. Antialiasing: Standard (greyscale)
+7. Scaling Factor: 1.00
+
+
+Pop Gnome Terminal Theme:
+
+Text
+        Custom font: Fira Mono 12
+        Deactivate Terminal bell
+Colors
+        Deactivate Use colors from system theme
+        Built-in schemes: Custom
+        Default color: Text #F2F2F2 | Background: #333333
+        Bold color (unchecked) #73C48F
+        Cursor color (checked): Text #49B9C7 | Background: #F6F6F6
+        Highlight color (checked): Text #FFFFFF | Background: #48B9C7
+        Uncheck Transparend background
+Palette colors:
+        0: #333333 1: #CC0000 2: #4E9A06 3: #C4A000 4: #3465A4 5: #75507B 6: #06989A 7: #D3D7CF
+        8: #88807C 9: #F15D22 10: #73C48F 11: #FFCE51 12: #48B9C7 13: #AD7FA8 14: #34E2E2 15: #EEEEEC
+        Uncheck Show bold text in bright colors
+	Right click on the Pop profile and set as default.
+
+Setup .bashrc (the file is in my repository)
+
+
+Apps:
+Firefox 
+
+Extensions
+    Bitwarden
+    Disable HTML5 Autoplay
+    GNOME Shell-Integration
+    HTTPS Everywhere
+    uBlock Origin
+    H264IFY
+    
+Plugins
+    OpenH264-Videocodec
+    Widevine Content Decryption Module
+
+Theme: 
+git clone https://github.com/rafaelmardojai/firefox-gnome-theme/ /home/$USER/fedora/firefox-gnome-theme
+cd /home/$USER/fedora/firefox-gnome-theme
+./scripts/install.sh
+
+
+
+Microsoft Fonts
+sudo dnf install -y curl cabextract xorg-x11-font-utils fontconfigsudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
+
+
+Skype
+flatpak install -y skype
+
+
+Zoom
+flatpak install -y zoom
+
+
+OpenH264 in Firefox
+sudo dnf config-manager --set-enabled fedora-cisco-openh264
+sudo dnf install -y gstreamer1-plugin-openh264 mozilla-openh264
+
+
+OBS
+sudo snap install obs-studio --edge
+sudo snap connect obs-studio:audio-record
+sudo snap connect obs-studio:avahi-control
+sudo snap connect obs-studio:camera
+sudo snap connect obs-studio:jack1
+sudo snap connect obs-studio:joystick
+sudo snap connect obs-studio:removable-media
