@@ -1,5 +1,5 @@
 BTRFS:
-noatime,ssd
+noatime,ssd,space_cache,commit=120,compress=zstd,discard=async
 
 EXT4:
 noatime,discard
