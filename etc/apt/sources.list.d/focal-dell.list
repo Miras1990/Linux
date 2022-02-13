@@ -1,0 +1,11 @@
+deb http://dell.archive.canonical.com/updates/ focal-dell public
+# deb-src http://dell.archive.canonical.com/updates/ focal-dell public
+
+deb http://dell.archive.canonical.com/updates/ focal-oem public
+# deb-src http://dell.archive.canonical.com/updates/ focal-oem public
+
+deb http://dell.archive.canonical.com/updates/ focal-somerville public
+# deb-src http://dell.archive.canonical.com/updates/ focal-somerville public
+
+deb http://dell.archive.canonical.com/updates/ focal-somerville-melisa public
+# deb-src http://dell.archive.canonical.com/updates focal-somerville-melisa public
