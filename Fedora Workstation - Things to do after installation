@@ -198,6 +198,8 @@ Palette colors:
 
 Setup .bashrc (the file is in my repository)
 
+Yaru Theme from Ubuntu
+sudo dnf install yaru-theme 
 
 Apps:
 Firefox 
