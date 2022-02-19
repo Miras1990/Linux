@@ -101,11 +101,6 @@ Fish - A Friendly Interactive Shell: https://fedoramagazine.org/fish-a-friendly-
 sudo dnf install -y fish util-linux-user
 chsh -s /usr/bin/fish
 
-Add the ~/.local/bin to my $PATH persistently in Fish
-mkdir -p /home/$USER/.local/bin
-set -Ua fish_user_paths /home/$USER/.local/bin
-bash -c 'echo $PATH'
-
 
 Gnome Extensions and Tweaks
 sudo dnf install gnome-extensions-app gnome-tweaks
@@ -139,7 +134,7 @@ sudo dnf install steam libtxc_dxtn.i686 ibtxc_dxtn.x86_64
 POP OS Theme
 
 Install Pop-Shell Tiling Extension:
-sudo dnf install gnome-shell-extension-pop-shell
+sudo dnf install gnome-shell-extension-pop-shell xprop
 
 
 Pop shell keyboard shortcuts:
