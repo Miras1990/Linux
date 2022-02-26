@@ -229,8 +229,8 @@ media.navigator.mediadatadecoder_vpx_enabled  true
 "media.hardware-video-decoding.force-enabled true" - not tested
 
 Other:
-layers.acceleration.force-enabled
-gfx.webrender.enabled
+layers.acceleration.force-enabled true
+gfx.webrender.enabled true
 
 
 Microsoft Fonts
