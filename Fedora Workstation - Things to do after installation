@@ -231,7 +231,7 @@ media.navigator.mediadatadecoder_vpx_enabled  true
 Other:
 layers.acceleration.force-enabled true
 gfx.webrender.enabled true
-
+gfx.webrender.all true
 
 Microsoft Fonts
 sudo dnf install curl cabextract xorg-x11-font-utils fontconfig 
