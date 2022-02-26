@@ -4,7 +4,7 @@ This is my configuration for Linux Fedora Workstation based on my own experience
 RPM Fusion repository: https://rpmfusion.org/Configuration
 sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
-<b>AppStream metadata</b>
+AppStream metadata
 sudo dnf groupupdate core
 
 Multimedia and codecs
@@ -19,16 +19,13 @@ sudo dnf install lame\* --exclude=lame-devel
 sudo dnf group upgrade --with-optional Multimedia
 sudo dnf install ffmpeg vlc
 
-
 Flatpak setup: https://flatpak.org/setup/Fedora/
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak update
 
-
 Install VAAPI - Intel GPU
 lspci | grep VGA
 sudo dnf install libva libva-intel-driver libva-vdpau-driver libva-utils libva-intel-hybrid-driver
-
 
 Thermald (Intel Thermal Daemon): https://github.com/intel/thermal_daemon 
 sudo dnf groupinstall "Development Tools" "C Development Tools and Libraries"
@@ -46,11 +43,9 @@ sudo make install
 5. Enable Service: sudo systemctl enable thermald
 6. Start service: sudo systemctl start thermald.service
 
-
 Power profiles daemon: https://gitlab.freedesktop.org/hadess/power-profiles-daemon
 sudo dnf install power-profiles-daemon
 sudo powerprofilesctl set power-saver or balanced
-
 
 Powertop: https://01.org/powertop/overview
 sudo dnf install powertop
