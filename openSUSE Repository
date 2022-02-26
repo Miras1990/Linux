@@ -43,25 +43,12 @@ https://download.opensuse.org/repositories/security/openSUSE_Leap_15.3/
 
 NVIDIA Cuda Repository - Install driver and Cuda
 http://developer.download.nvidia.com/compute/cuda/repos/opensuse15/x86_64/
-sudo zypper refresh
-sudo zypper install -y cuda
 
 Flatpak - https://flatpak.org/setup/openSUSE/
 https://download.opensuse.org/repositories/home:/adrianSuSE/15.3/
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-
 
 Snapcraft.io
 https://download.opensuse.org/repositories/system:/snappy/openSUSE_Leap_15.3/
-sudo zypper install snapd
-sudo systemctl enable snapd
-sudo systemctl start snapd
-
-sudo sh -c 'echo -e "[Atom]\nname=Atom Editor\nbaseurl=https://packagecloud.io/AtomEditor/atom/el/7/\$basearch\nenabled=1\ntype=rpm-md\ngpgcheck=0\nrepo_gpgcheck=1\ngpgkey=https://packagecloud.io/AtomEditor/atom/gpgkey" > /etc/zypp/repos.d/atom.repo'
-sudo zypper --gpg-auto-import-keys refresh
-
-Google Software Repositories for Linux
-https://www.google.com/linuxrepositories/
 
 Fonts
 http://download.opensuse.org/repositories/M17N:/fonts/openSUSE_Leap_15.3/
