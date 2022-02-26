@@ -1,4 +1,5 @@
-TRWA AKTUALIZACJA WPISU DLA NOWEJ WERSJI OPENSUSE!!!
+UPDATED FOR OPENSUSE LEAP 15.3:
+
 
 Packman Repository -> PING 90
 sudo zypper ar -cfp 90 'https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_$releasever/' packman
