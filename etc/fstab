@@ -6,3 +6,6 @@ noatime,discard
 
 XFS:
 noatime,discard
+
+tmpfs   /tmp         tmpfs   rw,nodev,nosuid,size=2G          0  0
+tmpfs   /www/cache   tmpfs   rw,size=1G,nr_inodes=5k,noexec,nodev,nosuid,uid=user,gid=group,mode=1700 0 0
