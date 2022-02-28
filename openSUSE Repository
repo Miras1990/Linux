@@ -5,7 +5,11 @@ Packman Repository -> PING 90
 sudo zypper ar -cfp 90 'https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_$releasever/' packman
 
 Intel Compute Runtime - Intel OpenCL
-zypper addrepo -r https://copr.fedorainfracloud.org/coprs/jdanecki/intel-opencl/repo/opensuse-leap-15.3/jdanecki-intel-opencl-opensuse-leap-15.3.repo
+zypper ar https://copr.fedorainfracloud.org/coprs/jdanecki/intel-opencl/repo/opensuse-leap-15.3/jdanecki-intel-opencl-opensuse-leap-15.3.repo
+
+Microsoft Repository for Linux:
+sudo zypper ar https://packages.microsoft.com/config/opensuse/15/prod.repo
+sudo rpm -Uvh https://packages.microsoft.com/config/opensuse/15/packages-microsoft-prod.rpm
 
 
 # Open YaST Software Repositories
@@ -54,9 +58,6 @@ https://download.opensuse.org/repositories/system:/snappy/openSUSE_Leap_15.3/
 
 Fonts
 http://download.opensuse.org/repositories/M17N:/fonts/openSUSE_Leap_15.3/
-
-Microsoft Repository for Linux:
-https://packages.microsoft.com/opensuse/15/prod/
 
 Yaru Theme from Ubuntu Community
 https://download.opensuse.org/repositories/home:Dead_Mozay/15.3/
