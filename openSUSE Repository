@@ -38,6 +38,7 @@ https://download.opensuse.org/repositories/Emulators:/Wine/openSUSE_Leap_15.3/
 
 virtualbox
 http://download.virtualbox.org/virtualbox/rpm/opensuse/15.0/x86_64/
+wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | rpm --import -
 
 Security - aircrack-ng
 https://download.opensuse.org/repositories/security/openSUSE_Leap_15.3/
