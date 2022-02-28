@@ -12,6 +12,7 @@ sudo zypper ar https://packages.microsoft.com/config/opensuse/15/prod.repo
 sudo rpm -Uvh https://packages.microsoft.com/config/opensuse/15/packages-microsoft-prod.rpm
 
 
+
 # Open YaST Software Repositories
 Libdvdcss Repository 
 http://opensuse-guide.org/repo/openSUSE_Leap_15.3/
