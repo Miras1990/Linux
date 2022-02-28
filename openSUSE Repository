@@ -7,7 +7,7 @@ sudo zypper ar -cfp 90 'https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE
 Intel Compute Runtime - Intel OpenCL
 zypper ar https://copr.fedorainfracloud.org/coprs/jdanecki/intel-opencl/repo/opensuse-leap-15.3/jdanecki-intel-opencl-opensuse-leap-15.3.repo
 
-Microsoft Repository for Linux:
+Microsoft Repository for Linux - https://docs.microsoft.com/en-us/windows-server/administration/linux-package-repository-for-microsoft-software:
 sudo zypper ar https://packages.microsoft.com/config/opensuse/15/prod.repo
 sudo rpm -Uvh https://packages.microsoft.com/config/opensuse/15/packages-microsoft-prod.rpm
 
@@ -31,7 +31,7 @@ http://download.opensuse.org/repositories/KDE:/Extra/openSUSE_Leap_15.3/
 KDE Applications -> PING 105
 http://download.opensuse.org/repositories/KDE:/Extra/KDE_Applications_openSUSE_Leap_15.3/
 
-rawtherapee
+Rawtherapee
 https://download.opensuse.org/repositories/home:/rawtherapee/openSUSE_Leap_15.3/
 
 Education - PING 100!!! - I-Nex
@@ -40,7 +40,7 @@ https://download.opensuse.org/repositories/Education/openSUSE_Leap_15.3/
 Wine
 https://download.opensuse.org/repositories/Emulators:/Wine/openSUSE_Leap_15.3/
 
-virtualbox
+Virtualbox
 http://download.virtualbox.org/virtualbox/rpm/opensuse/15.0/x86_64/
 wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | rpm --import -
 
