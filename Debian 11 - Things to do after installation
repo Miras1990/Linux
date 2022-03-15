@@ -1,0 +1,134 @@
+This is my configuration for Linux Fedora Workstation based on my own experience and various tutorials.
+
+GRUB CONFIGURATION:
+sudo nano /etc/default/grub
+https://github.com/Miras1990/Linux/blob/main/etc/default/grub
+
+
+INTEL GRAPHICS CONFIGURATION:
+https://github.com/Miras1990/Linux/blob/main/etc/X11/xorg.conf.d/20-intel.conf
+
+
+INTEL WI-FI CONFIGURATION:
+https://github.com/Miras1990/Linux/blob/main/etc/modprobe.d/iwlwifi.conf
+
+
+IO SCHEDULERS CONFIGURATION:
+https://github.com/Miras1990/Linux/blob/main/etc/udev/rules.d/60-io-scheduler.rules
+
+
+SYSCTL_CONF CONFIGURATION:
+https://github.com/Miras1990/Linux/blob/main/etc/sysctl.conf
+
+
+TLP USER CONFIGURATION:
+https://github.com/Miras1990/Linux/blob/main/etc/tlp.conf
+
+
+MULTIMEDIA – https://deb-multimedia.org/:
+wget http://www.deb-multimedia.org/pool/main/d/deb-multimedia-keyring/deb-multimedia-keyring_2016.8.1_all.deb
+sudo dpkg -i deb-multimedia-keyring_2016.8.1_all.deb
+sudo apt-get install apt-transport-https
+
+
+MATI75'S PRIVATE REPOSITORY – https://repozytorium.mati75.eu/:
+wget http://repozytorium.mati75.eu/archive.asc -O- | sudo apt-key add -
+
+
+GOOGLE LINUX REPOSITORY – https://www.google.com/linuxrepositories/:
+wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+
+
+VIRTUALBOX – https://www.virtualbox.org/wiki/Linux_Downloads:
+Add repository:
+deb [arch=amd64] https://download.virtualbox.org/virtualbox/debian bullseye contrib
+Download keys:
+wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
+wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
+
+
+TOR – https://support.torproject.org/apt/:
+Download GPG key:
+wget -qO- https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc | gpg --dearmor | sudo tee /usr/share/keyrings/tor-archive-keyring.gpg >/dev/null
+
+
+Install:
+sudo apt install tor deb.torproject.org-keyring
+
+
+DOCKER – https://docs.docker.com/engine/install/debian/:
+Add Docker GPG key:
+sudo apt install curl
+curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+
+ATOM – https://flight-manual.atom.io/getting-started/sections/installing-atom/:
+Add Key:
+wget -qO - https://packagecloud.io/AtomEditor/atom/gpgkey | sudo apt-key add -
+
+
+VISUAL STUDIO CODE ON LINUX – https://code.visualstudio.com/docs/setup/linux:
+sudo apt-get install wget gpg
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+
+sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
+rm -f packages.microsoft.gpg
+
+
+SUBLIME TEXT – https://www.sublimetext.com/docs/linux_repositories.html#apt:
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+
+
+STEAM – http://repo.steampowered.com/steam/:
+wget http://repo.steampowered.com/steam/archive/stable/steam.gpg
+sudo mv steam.gpg  /etc/apt/trusted.gpg.d/
+sudo dpkg --add-architecture i386
+sudo apt update
+sudo apt-get install libgl1-mesa-dri:amd64 libgl1-mesa-dri:i386 libgl1-mesa-glx:amd64 libgl1-mesa-glx:i386 steam-launcher
+
+
+LLVM – https://apt.llvm.org/:
+Download key:
+wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key|sudo apt-key add -
+Install default packages:
+sudo apt install clang-format clang-tidy clang-tools clang clangd libc++-dev libc++1 libc++abi-dev libc++abi1 libclang-dev libclang1 liblldb-dev libllvm-ocaml-dev libomp-dev libomp5 lld lldb llvm-dev llvm-runtime llvm python3-clang
+
+
+HOW TO UNGROUP WINDOWS IN "ALT-TAB" IN GNOME:
+Open dconf-editor
+Go to org/gnome/desktop/wm/keybindings
+Move the value '<Alt>Tab' from switch-applications to switch-windows
+Optionally move '<Shift><Alt>Tab' from switch-applications-backward to switch-windows-backward
+
+
+SWAP FILE:
+Use dd to create a swap file the size of your choosing:
+dd if=/dev/zero of=/swapfile bs=1M count=3072 status=progress
+Set the right permissions:
+chmod 600 /swapfile
+Format it to swap:
+mkswap /swapfile
+Activate swap:
+swapon /swapfile
+Edit /etc/fstab:
+/swapfile none swap defaults 0 0
+
+
+INSTALL NONFREE AND FREE FIRMWARE:
+sudo apt install firmware-linux firmware-linux-free firmware-linux-nonfree firmware-misc-nonfree
+
+
+INSTALL GNOME BOXES:
+sudo apt install gnome-boxes qemu-kvm libvirt0 virt-manager bridge-utils
+
+CHECKING IF NESTED VIRTUALIZATION IS SUPPORTED:
+FOR INTEL: cat /sys/module/kvm_intel/parameters/nested
+FOR AMD: cat /sys/module/kvm_amd/parameters/nested
+If you see 1 or Y, nested virtualization is supported; if you see 0 or N, nested virtualization is not supported.
+
+ENABLING NESTED VIRTUALIZATION:
+sudo nano /etc/modprobe.d/kvm.conf
+options kvm_intel nested=1
+
+ADD USER TO LIBVIRT GROUP:
+sudo usermod -a -G libvirt „user”
