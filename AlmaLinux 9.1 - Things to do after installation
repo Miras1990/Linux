@@ -1,24 +1,38 @@
 Repozytorium EPEL: https://rpmfusion.org/Configuration
-sudo yum install --nogpgcheck https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+sudo dnf install --nogpgcheck https://dl.fedoraproject.org/pub/epel/epel-release-latest-$(rpm -E %rhel).noarch.rpm
 
 Repozytorium RPM Fusion:
-sudo yum install --nogpgcheck https://download1.rpmfusion.org/free/el/rpmfusion-free-release-8.noarch.rpm https://download1.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-8.noarch.rpm
+sudo dnf install --nogpgcheck https://mirrors.rpmfusion.org/free/el/rpmfusion-free-release-$(rpm -E %rhel).noarch.rpm https://mirrors.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-$(rpm -E %rhel).noarch.rpm
 
 CentOS 8 required additional step:
-sudo yum config-manager --enable PowerTools
+sudo dnf config-manager --enable powertools
 
 AppStream metadata
-sudo yum groupupdate core
+sudo dnf groupupdate core
 
 Multimedia post-install
-sudo yum groupupdate multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
-sudo yum groupupdate sound-and-video
+sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
+sudo dnf groupupdate sound-and-video
 
 Tainted repos (odtwarzanie filmów z DVD)
-sudo yum install rpmfusion-free-release-tainted
-sudo yum install libdvdcss
+sudo dnf install rpmfusion-free-release-tainted
+sudo dnf install libdvdcss
 
-Włączyć repozytorium flathub: https://flatpak.org/setup/CentOS/
+Hardware Accelerated Codec:
+sudo dnf install intel-media-driver (from Broadwell)
+sudo dnf install libva-intel-driver
+
+Hardware codecs with AMD (mesa):
+sudo dnf swap mesa-va-drivers mesa-va-drivers-freeworld
+sudo dnf swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld
+i686 for Steam:
+sudo dnf swap mesa-va-drivers.i686 mesa-va-drivers-freeworld.i686
+sudo dnf swap mesa-vdpau-drivers.i686 mesa-vdpau-drivers-freeworld.i686
+
+Hardware codecs with NVIDIA
+sudo dnf install nvidia-vaapi-driver
+
+Enable Flathub: https://flatpak.org/setup/CentOS/
 https://flathub.org/repo/flathub.flatpakrepo
 sudo cp flathub.flatpakrepo /etc/yum.repos.d/
 
