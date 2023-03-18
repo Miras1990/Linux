@@ -1,4 +1,4 @@
-UUID=cb97cfd3-c68f-4589-bba8-2aff928a97ca  /          	xfs   	usrquota,grpquota,discard,noatime  0  0
+UUID=cb97cfd3-c68f-4589-bba8-2aff928a97ca  /          	xfs   	discard,noatime  0  0
 UUID=78BF-0F3D                             /boot/efi  	vfat  	utf8             0  2
 UUID=8182808a-9a13-4498-9dd1-7e67b1209e6f  /home      	xfs   	discard,noatime  0  0
 tmpfs   				   /tmp       	tmpfs 	rw,nodev,nosuid,size=2G,discard,noatime,mode=1777          0  0
