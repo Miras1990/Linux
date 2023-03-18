@@ -49,12 +49,6 @@ sudo dnf install gstreamer1-plugins-* ffmpeg
 Thermald:
 sudo dnf install automake gcc gcc-c++ glib2-devel libxml2-devel dbus-glib-devel
 
-TLP:
-sudo dnf install tlp
-sudo nano /etc/default/tlp
-sudo systemctl enable tlp.service
-sudo systemctl start tlp.service
-
 Apps:
 Google Chrome
 Gimp
