@@ -47,7 +47,9 @@ Codecs:
 sudo dnf install gstreamer1-plugins-* ffmpeg
 
 Thermald:
-sudo dnf install automake gcc gcc-c++ glib2-devel libxml2-devel dbus-glib-devel
+sudo dnf install thermald
+sudo systemctl enable thermald.service
+sudo systemctl start thermald.service
 
 Apps:
 Google Chrome
