@@ -50,8 +50,7 @@ Thermald:
 sudo dnf install automake gcc gcc-c++ glib2-devel libxml2-devel dbus-glib-devel
 
 TLP:
-wget https://download-ib01.fedoraproject.org/pub/epel/7/x86_64/Packages/t/tlp-1.1-1.el7.noarch.rpm https://download-ib01.fedoraproject.org/pub/epel/7/x86_64/Packages/t/tlp-rdw-1.1-1.el7.noarch.rpm
-sudo dnf install tlp-1.1-1.el7.noarch.rpm tlp-rdw-1.1-1.el7.noarch.rpm
+sudo dnf install tlp
 sudo nano /etc/default/tlp
 sudo systemctl enable tlp.service
 sudo systemctl start tlp.service
