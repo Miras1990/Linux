@@ -2,7 +2,7 @@ RPM Fusion repository:
 sudo dnf install --nogpgcheck https://mirrors.rpmfusion.org/free/el/rpmfusion-free-release-$(rpm -E %rhel).noarch.rpm https://mirrors.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-$(rpm -E %rhel).noarch.rpm
 
 CentOS 8 required additional step:
-sudo dnf config-manager --enable powertools
+sudo dnf config-manager --enable crb
 
 AppStream metadata
 sudo dnf groupupdate core
