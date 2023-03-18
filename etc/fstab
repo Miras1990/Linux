@@ -1,3 +1,3 @@
-UUID=cb97cfd3-c68f-4589-bba8-2aff928a97ca  /          	xfs   	noatime  0  0
-UUID=78BF-0F3D                             /boot/efi  	vfat  	utf8             0  2
-UUID=8182808a-9a13-4498-9dd1-7e67b1209e6f  /home      	xfs   	noatime  0  0
+sda  /          	xfs   	noatime  0  0
+sda  /boot/efi  	vfat  	utf8             0  2
+sdb  /home      	xfs   	noatime  0  0
