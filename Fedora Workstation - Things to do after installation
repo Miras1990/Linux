@@ -101,6 +101,11 @@ layers.acceleration.force-enabled true
 gfx.webrender.enabled true
 gfx.webrender.all true
 
+How to Ungroup Windows in “Alt-Tab” in GNOME:
+Open dconf-editor
+Go to org/gnome/desktop/wm/keybindings
+Move the value '<Alt>Tab' from switch-applications to switch-windows
+
 Microsoft Fonts
 sudo dnf install curl cabextract xorg-x11-font-utils fontconfig 
 sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
@@ -114,21 +119,10 @@ flatpak install brackets
 Discord
 flatpak install discord
 
-How to Ungroup Windows in “Alt-Tab” in GNOME:
-Open dconf-editor
-Go to org/gnome/desktop/wm/keybindings
-Move the value '<Alt>Tab' from switch-applications to switch-windows
-
-Microsoft Visual Studio Code - https://code.visualstudio.com/docs/setup/linux:
-sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
-sudo dnf check-update
+Microsoft Visual Studio Code
 sudo dnf install code
 
-Microsoft Teams - https://docs.microsoft.com/en-us/answers/questions/3746/provide-repository-installation-instructions-inste.html:
-sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-sudo sh -c 'echo -e "[teams]\nname=teams\nbaseurl=https://packages.microsoft.com/yumrepos/ms-teams\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/teams.repo'
-sudo dnf check-update
+Microsoft Teams
 sudo dnf install teams
 
 Microsoft Repository for Linux:
