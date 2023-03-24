@@ -1,6 +1,0 @@
-Cannot restart samba, samba.service is masked:
-sudo rm /lib/systemd/system/samba.service 
-sudo systemctl enable samba.service nmbd.service
-sudo systemctl start samba 
-
-Source: https://askubuntu.com/questions/754572/cannot-restart-samba-samba-service-is-masked
