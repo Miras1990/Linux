@@ -1,8 +1,0 @@
-Sprawdzanie który menadżer okien jest aktualnie używany:
-loginctl show-session $(awk '/tty/ {print $1}' <(loginctl)) -p Type | awk -F= '{print $2}'
-
-Wyłączenie menedżera okien "Wayland":
-sudo nano /etc/gdm/custom.conf
-
-Usunięcie znaku "#" przed tym wpisem:
-#WaylandEnable=false
