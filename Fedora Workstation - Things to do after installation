@@ -28,20 +28,7 @@ lspci | grep VGA
 sudo dnf install libva libva-intel-driver libva-vdpau-driver libva-utils libva-intel-hybrid-driver
 
 Thermald (Intel Thermal Daemon): https://github.com/intel/thermal_daemon 
-sudo dnf groupinstall "Development Tools" "C Development Tools and Libraries"
-sudo dnf install automake gcc gcc-c++ glib-devel libxml2-devel dbus-glib-devel autoconf-archive gtk-doc upower-devel xz-devel libevdev-devel
-
-Download latest release: https://github.com/intel/thermal_daemon/tags
-./autogen.sh prefix=/
-make
-sudo make install
-
-1. Start service: sudo systemctl start thermald.service
-2. Get Status: sudo systemctl status thermald.service
-3. Stop service: sudo systemctl stop thermald.service
-4. Terminate using DBUS I/F: sudo test/test_pref.sh  (and select "TERMINATE" choice)
-5. Enable Service: sudo systemctl enable thermald
-6. Start service: sudo systemctl start thermald.service
+sudo dnf install thermald
 
 Power profiles daemon: https://gitlab.freedesktop.org/hadess/power-profiles-daemon
 sudo dnf install power-profiles-daemon
@@ -50,34 +37,19 @@ sudo powerprofilesctl set power-saver or balanced
 Powertop: https://01.org/powertop/overview
 sudo dnf install powertop
 
-
-GRUB Setup:
-GRUB_CMDLINE_LINUX="rhgb quiet acpi_osi=Linux pcie_aspm=force drm.vblankoffdelay=1 zswap.enabled=1 zswap.compressor=lz4 i915.enable_guc=2 scsi_mod.use_blk_mq=1 intel_iommu=on intel_pstate=passive mitigations=off"
-
+GRUB update
 sudo grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg
-
 
 TRIM Support
 sudo systemctl enable fstrim.timer
 sudo systemctl start fstrim.timer
 sudo fstrim -v /
 
-
 DNF Flags:
 echo 'fastestmirror=1' | sudo tee -a /etc/dnf/dnf.conf
 echo 'max_parallel_downloads=10' | sudo tee -a /etc/dnf/dnf.conf
 echo 'deltarpm=true' | sudo tee -a /etc/dnf/dnf.conf
 cat /etc/dnf/dnf.conf
-
-
-Set Hostname
-hostnamectl set-hostname fedora
-
-
-Check Locales
-localectl status
-timedatectl
-
 
 Install updates and reboot
 sudo dnf upgrade --refresh
@@ -89,17 +61,13 @@ sudo fwupdmgr get-updates
 sudo fwupdmgr update
 sudo reboot now
 
-
 Fish - A Friendly Interactive Shell: https://fedoramagazine.org/fish-a-friendly-interactive-shell/
 sudo dnf install -y fish util-linux-user
 chsh -s /usr/bin/fish
 
-
 Gnome Extensions and Tweaks
 sudo dnf install gnome-extensions-app gnome-tweaks
 sudo dnf install gnome-shell-extension-appindicator
-https://extensions.gnome.org/extension/906/sound-output-device-chooser/
-
 
 Snap support
 sudo dnf install snapd
@@ -107,119 +75,26 @@ sudo ln -s /var/lib/snapd/snap /snap
 sudo reboot now
 sudo snap refresh
 
-
 Google Chrome: https://www.google.com/linuxrepositories/
 wget https://dl.google.com/linux/linux_signing_key.pub
 sudo rpm --import linux_signing_key.pub
 rpm -qi gpg-pubkey-7fac5991-*
 
-
-Chromium-freeworld - VAAPI Support: https://major.io/2019/10/20/install-chromium-with-vaapi-on-fedora-30/
-sudo dnf -y install chromium-freeworld
-Enable DRM:
-sudo cp /opt/google/chrome/libwidevinecdm.so /usr/lib64/chromium-freeworld/
-
-
 Steam:
 sudo dnf install steam libtxc_dxtn.i686 ibtxc_dxtn.x86_64
-
-
-POP OS Theme
-
-Install Pop-Shell Tiling Extension:
-sudo dnf install gnome-shell-extension-pop-shell xprop
-
-
-Pop shell keyboard shortcuts:
-sudo dnf install -y make cargo rust gtk3-devel
-git clone https://github.com/pop-os/shell-shortcuts /home/$USER/fedora/pop-theme/shell-shortcuts
-cd /home/$USER/fedora/pop-theme/shell-shortcuts
-make
-sudo make install
-pop-shell-shortcuts
-
-
-Pop GTK theme:
-sudo dnf install -y sassc meson glib2-devel
-git clone https://github.com/pop-os/gtk-theme /home/$USER/fedora/pop-theme/gtk-theme
-cd /home/$USER/fedora/pop-theme/gtk-theme
-meson build && cd build
-ninja
-sudo ninja install
-gsettings set org.gnome.desktop.interface gtk-theme "Pop"
-
-
-Pop icon theme:
-git clone https://github.com/pop-os/icon-theme /home/$USER/fedora/pop-theme/icon-theme
-cd /home/$USER/fedora/pop-theme/icon-theme
-meson build
-sudo ninja -C "build" install
-gsettings set org.gnome.desktop.interface icon-theme "Pop"
-gsettings set org.gnome.desktop.interface cursor-theme "Pop"
-
-
-Pop fonts:
-sudo dnf install -y fira-code-fonts 'mozilla-fira*' 'google-roboto*'
-Go into Gnome Tweaks and make the following changes in Fonts:
-1. Interface Text: Fira Sans Book 10
-2. Document Text: Roboto Slab Regular 11
-3. Monospace Text: Fira Mono Regular 11
-4. Legacy Window Titles: Fira Sans SemiBold 10
-5. Hinting: Slight
-6. Antialiasing: Standard (greyscale)
-7. Scaling Factor: 1.00
-
-
-Pop Gnome Terminal Theme:
-
-Text
-        Custom font: Fira Mono 12
-        Deactivate Terminal bell
-Colors
-        Deactivate Use colors from system theme
-        Built-in schemes: Custom
-        Default color: Text #F2F2F2 | Background: #333333
-        Bold color (unchecked) #73C48F
-        Cursor color (checked): Text #49B9C7 | Background: #F6F6F6
-        Highlight color (checked): Text #FFFFFF | Background: #48B9C7
-        Uncheck Transparend background
-Palette colors:
-        0: #333333 1: #CC0000 2: #4E9A06 3: #C4A000 4: #3465A4 5: #75507B 6: #06989A 7: #D3D7CF
-        8: #88807C 9: #F15D22 10: #73C48F 11: #FFCE51 12: #48B9C7 13: #AD7FA8 14: #34E2E2 15: #EEEEEC
-        Uncheck Show bold text in bright colors
-	Right click on the Pop profile and set as default.
-
-Setup .bashrc (the file is in my repository)
 
 Yaru Theme from Ubuntu
 sudo dnf install yaru-theme 
 
-Apps:
-Firefox 
-
-Extensions
-    Bitwarden
-    Disable HTML5 Autoplay
-    GNOME Shell-Integration
-    HTTPS Everywhere
-    uBlock Origin
-    H264IFY
-    
-Plugins
-    OpenH264-Videocodec
-    Widevine Content Decryption Module
-
-Theme: 
-git clone https://github.com/rafaelmardojai/firefox-gnome-theme/ /home/$USER/fedora/firefox-gnome-theme
-cd /home/$USER/fedora/firefox-gnome-theme
-./scripts/install.sh
+OpenH264 in Firefox
+sudo dnf config-manager --set-enabled fedora-cisco-openh264
+sudo dnf install gstreamer1-plugin-openh264 mozilla-openh264
 
 Enable VAAPI in Firefox:
 media.ffmpeg.vaapi.enabled  true
 media.ffvpx.enabled  false
 media.rdd-vpx.enabled  false
 media.navigator.mediadatadecoder_vpx_enabled  true
-"media.hardware-video-decoding.force-enabled true" - not tested
 
 Other:
 layers.acceleration.force-enabled true
@@ -230,38 +105,14 @@ Microsoft Fonts
 sudo dnf install curl cabextract xorg-x11-font-utils fontconfig 
 sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 
-
 Skype
 flatpak install -y skype
-
-
-Zoom
-flatpak install -y zoom
-
-
-OpenH264 in Firefox
-sudo dnf config-manager --set-enabled fedora-cisco-openh264
-sudo dnf install gstreamer1-plugin-openh264 mozilla-openh264
-
-
-OBS
-sudo snap install obs-studio --edge
-sudo snap connect obs-studio:audio-record
-sudo snap connect obs-studio:avahi-control
-sudo snap connect obs-studio:camera
-sudo snap connect obs-studio:jack1
-sudo snap connect obs-studio:joystick
-sudo snap connect obs-studio:removable-media
 
 Brackets
 flatpak install brackets
 
 Discord
 flatpak install discord
-
-Atom -> https://flight-manual.atom.io/getting-started/sections/installing-atom/
-sudo rpm --import https://packagecloud.io/AtomEditor/atom/gpgkey
-sudo sh -c 'echo -e "[Atom]\nname=Atom Editor\nbaseurl=https://packagecloud.io/AtomEditor/atom/el/7/\$basearch\nenabled=1\ngpgcheck=0\nrepo_gpgcheck=1\ngpgkey=https://packagecloud.io/AtomEditor/atom/gpgkey" > /etc/yum.repos.d/atom.repo'
 
 How to Ungroup Windows in “Alt-Tab” in GNOME:
 Open dconf-editor
