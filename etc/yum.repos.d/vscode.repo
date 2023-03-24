@@ -1,0 +1,7 @@
+[vscode-yum]
+name=vscode-yum
+enabled=1
+baseurl=http://packages.microsoft.com:80/yumrepos/vscode/
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=http://packages.microsoft.com:80/yumrepos/vscode/repodata/repomd.xml.key
