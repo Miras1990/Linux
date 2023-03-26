@@ -61,10 +61,8 @@ Tainted repos
 sudo dnf install rpmfusion-free-release-tainted
 sudo dnf install dnf-plugins-core
 sudo dnf install libdvdcss
-sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,ugly-\*,base} gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel ffmpeg gstreamer-ffmpeg 
-sudo dnf install lame\* --exclude=lame-devel
+sudo dnf install @multimedia @sound-and-video vlc ffmpeg ffmpeg-libs gstreamer-ffmpeg gstreamer1-plugins-{bad-\*,good-\*,ugly-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav lame\* --exclude=gstreamer1-plugins-bad-free-devel --exclude=lame-devel
 sudo dnf group upgrade --with-optional Multimedia
-sudo dnf install ffmpeg vlc
 
 Flatpak setup: https://flatpak.org/setup/Fedora/
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
