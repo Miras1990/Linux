@@ -68,10 +68,6 @@ Flatpak setup: https://flatpak.org/setup/Fedora/
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak update
 
-Fish - A Friendly Interactive Shell: https://fedoramagazine.org/fish-a-friendly-interactive-shell/
-sudo dnf install fish util-linux-user
-chsh -s /usr/bin/fish
-
 Gnome Extensions and Tweaks
 sudo dnf install gnome-extensions-app gnome-tweaks
 sudo dnf install gnome-shell-extension-appindicator
