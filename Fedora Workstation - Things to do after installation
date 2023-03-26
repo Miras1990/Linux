@@ -13,6 +13,9 @@ sudo dnf install libva libva-intel-driver libva-vdpau-driver libva-utils libva-i
 Configure VA-API Video decoding on AMD
 sudo dnf swap mesa-va-drivers mesa-va-drivers-freeworld libavcodec-freeworld
 sudo dnf swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld libavcodec-freeworld
+For Steam enable i686:
+sudo dnf swap mesa-va-drivers.i686 mesa-va-drivers-freeworld.i686
+sudo dnf swap mesa-vdpau-drivers.i686 mesa-vdpau-drivers-freeworld.i686
 
 Configure VA-API Video decoding on NVIDIA -> https://github.com/elFarto/nvidia-vaapi-driver
 sudo dnf install libavcodec-freeworld nvidia-vaapi-driver
