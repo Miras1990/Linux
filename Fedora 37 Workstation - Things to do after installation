@@ -69,7 +69,7 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 flatpak update
 
 Fish - A Friendly Interactive Shell: https://fedoramagazine.org/fish-a-friendly-interactive-shell/
-sudo dnf install -y fish util-linux-user
+sudo dnf install fish util-linux-user
 chsh -s /usr/bin/fish
 
 Gnome Extensions and Tweaks
@@ -83,7 +83,7 @@ sudo reboot now
 sudo snap refresh
 
 Steam:
-sudo dnf install steam libtxc_dxtn.i686 ibtxc_dxtn.x86_64
+sudo dnf install steam
 
 Yaru Theme from Ubuntu
 sudo dnf install yaru-theme 
