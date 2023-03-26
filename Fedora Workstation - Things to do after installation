@@ -6,9 +6,16 @@ echo 'max_parallel_downloads=10' | sudo tee -a /etc/dnf/dnf.conf
 echo 'deltarpm=true' | sudo tee -a /etc/dnf/dnf.conf
 cat /etc/dnf/dnf.conf
 
-Install VAAPI - Intel GPU
+Configure VA-API Video decoding on Intel
 lspci | grep VGA
-sudo dnf install libva libva-intel-driver libva-vdpau-driver libva-utils libva-intel-hybrid-driver
+sudo dnf install libva libva-intel-driver libva-vdpau-driver libva-utils libva-intel-hybrid-driver libavcodec-freeworld
+
+Configure VA-API Video decoding on AMD
+sudo dnf install mesa-va-drivers mesa-va-drivers-freeworld libavcodec-freeworld
+sudo dnf install mesa-vdpau-drivers mesa-vdpau-drivers-freeworld libavcodec-freeworld
+
+Configure VA-API Video decoding on NVIDIA -> https://github.com/elFarto/nvidia-vaapi-driver
+sudo dnf install libavcodec-freeworld nvidia-vaapi-driver
 
 Thermald (Intel Thermal Daemon): https://github.com/intel/thermal_daemon 
 sudo dnf install thermald
