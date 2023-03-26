@@ -1,27 +1,10 @@
 This is my configuration for Linux Fedora Workstation based on my own experience and various tutorials.
 
-
-RPM Fusion repository: https://rpmfusion.org/Configuration
-sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-
-AppStream metadata
-sudo dnf groupupdate core
-
-Multimedia and codecs
-sudo dnf groupupdate sound-and-video
-
-Tainted repos
-sudo dnf install rpmfusion-free-release-tainted
-sudo dnf install dnf-plugins-core
-sudo dnf install libdvdcss
-sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,ugly-\*,base} gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel ffmpeg gstreamer-ffmpeg 
-sudo dnf install lame\* --exclude=lame-devel
-sudo dnf group upgrade --with-optional Multimedia
-sudo dnf install ffmpeg vlc
-
-Flatpak setup: https://flatpak.org/setup/Fedora/
-sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak update
+DNF Flags:
+echo 'fastestmirror=1' | sudo tee -a /etc/dnf/dnf.conf
+echo 'max_parallel_downloads=10' | sudo tee -a /etc/dnf/dnf.conf
+echo 'deltarpm=true' | sudo tee -a /etc/dnf/dnf.conf
+cat /etc/dnf/dnf.conf
 
 Install VAAPI - Intel GPU
 lspci | grep VGA
@@ -45,12 +28,6 @@ sudo systemctl enable fstrim.timer
 sudo systemctl start fstrim.timer
 sudo fstrim -v /
 
-DNF Flags:
-echo 'fastestmirror=1' | sudo tee -a /etc/dnf/dnf.conf
-echo 'max_parallel_downloads=10' | sudo tee -a /etc/dnf/dnf.conf
-echo 'deltarpm=true' | sudo tee -a /etc/dnf/dnf.conf
-cat /etc/dnf/dnf.conf
-
 Install updates and reboot
 sudo dnf upgrade --refresh
 sudo dnf check
@@ -60,6 +37,28 @@ sudo fwupdmgr refresh --force
 sudo fwupdmgr get-updates
 sudo fwupdmgr update
 sudo reboot now
+
+RPM Fusion repository: https://rpmfusion.org/Configuration
+sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+
+AppStream metadata
+sudo dnf groupupdate core
+
+Multimedia and codecs
+sudo dnf groupupdate sound-and-video
+
+Tainted repos
+sudo dnf install rpmfusion-free-release-tainted
+sudo dnf install dnf-plugins-core
+sudo dnf install libdvdcss
+sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,ugly-\*,base} gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel ffmpeg gstreamer-ffmpeg 
+sudo dnf install lame\* --exclude=lame-devel
+sudo dnf group upgrade --with-optional Multimedia
+sudo dnf install ffmpeg vlc
+
+Flatpak setup: https://flatpak.org/setup/Fedora/
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak update
 
 Fish - A Friendly Interactive Shell: https://fedoramagazine.org/fish-a-friendly-interactive-shell/
 sudo dnf install -y fish util-linux-user
@@ -74,11 +73,6 @@ sudo dnf install snapd
 sudo ln -s /var/lib/snapd/snap /snap
 sudo reboot now
 sudo snap refresh
-
-Google Chrome: https://www.google.com/linuxrepositories/
-wget https://dl.google.com/linux/linux_signing_key.pub
-sudo rpm --import linux_signing_key.pub
-rpm -qi gpg-pubkey-7fac5991-*
 
 Steam:
 sudo dnf install steam libtxc_dxtn.i686 ibtxc_dxtn.x86_64
@@ -95,8 +89,6 @@ media.ffmpeg.vaapi.enabled  true
 media.ffvpx.enabled  false
 media.rdd-vpx.enabled  false
 media.navigator.mediadatadecoder_vpx_enabled  true
-
-Other:
 layers.acceleration.force-enabled true
 gfx.webrender.enabled true
 gfx.webrender.all true
