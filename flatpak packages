@@ -1,5 +1,4 @@
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub io.atom.Atom
 flatpak install flathub org.kde.kdenlive
 flatpak install flathub org.kde.krita
 flatpak install flathub org.videolan.VLC
@@ -8,11 +7,7 @@ flatpak install flathub com.spotify.Client
 flatpak install flathub org.gimp.GIMP
 flatpak install flathub org.shotcut.Shotcut
 flatpak install flathub com.valvesoftware.Steam
-flatpak install flathub com.wps.Office
-flatpak install flathub com.sublimetext.three
-flatpak install flathub org.qbittorrent.qBittorrent
 flatpak install flathub com.discordapp.Discord
-flatpak install flathub io.brackets.Brackets
 flatpak install flathub com.teamspeak.TeamSpeak
 flatpak install flathub org.blender.Blender
 flatpak install flathub org.darktable.Darktable
