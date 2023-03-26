@@ -94,12 +94,15 @@ sudo dnf install gstreamer1-plugin-openh264 mozilla-openh264
 
 Enable VAAPI in Firefox:
 media.ffmpeg.vaapi.enabled  true
-media.ffvpx.enabled  false
-media.rdd-vpx.enabled  false
 media.navigator.mediadatadecoder_vpx_enabled  true
 layers.acceleration.force-enabled true
 gfx.webrender.enabled true
 gfx.webrender.all true
+gfx.x11-egl.force-enabled true
+
+Add to ~/.profile:
+export MOZ_DISABLE_RDD_SANDBOX=1
+export MOZ_X11_EGL=1
 
 How to Ungroup Windows in “Alt-Tab” in GNOME:
 Open dconf-editor
