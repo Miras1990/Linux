@@ -121,6 +121,30 @@ sudo snap install libreoffice
 Blender:
 sudo snap install blender --classic
 
+Spotify:
+sudo snap install spotify
+
+Discord:
+sudo snap install discord
+
+Krita:
+sudo snap install krita
+
+Inkscape:
+sudo snap install inkscape
+
+Audacity:
+sudo snap install audacity
+
+Darktable:
+sudo snap install darktable
+
+Microsoft PowerShell
+sudo snap install powershell --classic
+
+Skype
+sudo snap install skype
+
 
 Flatpaks:
 GIMP:
