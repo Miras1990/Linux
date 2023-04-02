@@ -118,6 +118,9 @@ sudo apt remove libreoffice-*
 sudo apt autoremove
 sudo snap install libreoffice
 
+Blender:
+sudo snap install blender --classic
+
 
 Flatpaks:
 GIMP:
