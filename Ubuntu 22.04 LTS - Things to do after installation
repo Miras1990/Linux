@@ -39,7 +39,6 @@ sudo apt install ntfs-3g exfat-fuse
 
 
 Install Flatpak and add the Flathub repository:
-sudo add-apt-repository ppa:flatpak/stable
 sudo apt install flatpak
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
@@ -119,6 +118,10 @@ sudo apt remove libreoffice-*
 sudo apt autoremove
 sudo snap install libreoffice
 
+
+Flatpaks:
+GIMP:
+flatpak install org.gimp.GIMP org.gimp.GIMP.Plugin.Resynthesizer org.gimp.GIMP.Plugin.LiquidRescale org.gimp.GIMP.Plugin.Lensfun org.gimp.GIMP.Plugin.GMic org.gimp.GIMP.Plugin.Fourier org.gimp.GIMP.Plugin.FocusBlur org.gimp.GIMP.Plugin.BIMP org.gimp.GIMP.Manual
 
 Additional PPAs:
 
