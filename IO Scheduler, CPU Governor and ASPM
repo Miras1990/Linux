@@ -1,3 +1,4 @@
 cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
 cat /sys/module/pcie_aspm/parameters/policy
 cat /sys/block/sd*/queue/scheduler
+cat /sys/block/nvme0n1/queue/scheduler
