@@ -83,9 +83,10 @@ pactl set-default-sink alsa_output.usb-Harman_Multimedia_JBL_Pebbles_1.0.0-00.an
 
 
 Gnome Extensions and Tweaks:
-sudo apt install gnome-tweaks
+sudo apt install gnome-tweaks dconf-editor
 sudo apt install gnome-shell-extension-manager (or flatpak install flathub org.gnome.Extensions)
 Enable minimize on click - gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
+Change volume step - dconf-editor -> org.gnome.settings-daemon.plugins.media-keys -> volume-step 2
 
 
 Ricks-Lab GPU Utilities - monitoring AMD GPU - https://github.com/Ricks-Lab/gpu-utils:
