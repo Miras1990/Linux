@@ -1,5 +1,5 @@
-sda1  /boot                   xfs     noatime                    0 0
-sda2  /boot/efi               vfat    umask=0077,shortname=winnt 0 2
-sda3  /                       xfs     noatime                    0 0
-sda4  /home                   xfs     noatime                    0 0
-sdb1  /home/miras/HDD         ext4    defaults,user              1 2
+/dev/nvme0n1p1  /boot/efi     vfat    umask=0077                                           0 1
+/dev/nvme0n1p2  /             ext4    errors=remount-ro,noatime,discard                    0 1
+/dev/nvme0n1p3  none          swap    sw                                                   0 0
+/dev/nvme0n1p4  /home         ext4    defaults,noatime,discard                             0 2
+sdb1  /home/miras/HDD         ext4    defaults,user                                        1 2
