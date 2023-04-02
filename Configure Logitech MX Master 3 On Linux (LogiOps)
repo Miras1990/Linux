@@ -1,5 +1,16 @@
+Configure Logitech MX Master 3 On Linux (LogiOps) 
+https://github.com/PixlOne/logiops
+https://danishshakeel.me/configure-logitech-mx-master-3-on-linux-logiops/
+
 Installing LogiOps:
+Ubuntu/Debian:
+sudo apt install cmake libevdev-dev libudev-dev libconfig++-dev
+
+Fedora:
 sudo dnf install cmake libevdev-devel systemd-devel libconfig-devel gcc-c++
+
+openSUSE:
+sudo zypper install cmake libevdev-devel systemd-devel libconfig-devel gcc-c++ libconfig++-devel libudev-devel
 
 git clone https://github.com/PixlOne/logiops.git
 mkdir build
