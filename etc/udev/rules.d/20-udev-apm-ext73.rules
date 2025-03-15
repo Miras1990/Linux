@@ -1,0 +1,2 @@
+KERNEL=="ACAD", SUBSYSTEM=="power_supply", ATTR{online}=="0", ATTR{type}=="Mains", RUN+="/etc/apm-ext73/advanced_power_management_by_ext73_v7.8 true"
+KERNEL=="ACAD", SUBSYSTEM=="power_supply", ATTR{online}=="1", ATTR{type}=="Mains", RUN+="/etc/apm-ext73/advanced_power_management_by_ext73_v7.8 false"
