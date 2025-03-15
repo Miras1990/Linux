@@ -4,7 +4,7 @@ GRUB_CMDLINE_LINUX_DEFAULT="acpi_osi=Linux pcie_aspm=force drm.vblankoffdelay=1 
 
 Intel Desktop:
 GRUB_CMDLINE_LINUX_DEFAULT="acpi_osi=Linux scsi_mod.use_blk_mq=1"
-
+acpi_osi=Linux pcie_aspm=force drm.vblankoffdelay=1 intel_pstate=active preempt=voluntary zswap.enabled=1 zswap.compressor=lz4 i915.enable_guc=2
 
 AMD Desktop:
 GRUB_CMDLINE_LINUX_DEFAULT="acpi_osi=Linux acpi_enforce_resources=lax scsi_mod.use_blk_mq=1"
