@@ -1,12 +1,6 @@
 Install updates and clean cache:
 sudo apt update
 sudo apt upgrade
-sudo apt dist-upgrade
-sudo apt autoremove
-sudo apt autoclean
-sudo apt-get clean
-Restart OS
-
 
 Linux Vendor Firmware Service (fwupdmgr) - https://fwupd.org/:
 sudo apt install fwupd
@@ -14,8 +8,7 @@ sudo fwupdmgr get-devices
 sudo fwupdmgr refresh --force
 sudo fwupdmgr get-updates
 sudo fwupdmgr update
-sudo reboot now
-
+Restart OS
 
 Install AMDGPU-PRO: https://www.amd.com/en/support/graphics/amd-radeon-rx-6000-series/amd-radeon-rx-6400-series/amd-radeon-rx-6400
 sudo apt install ./amdgpu-install-VERSION.deb
@@ -25,35 +18,19 @@ sudo usermod -a -G render $LOGNAME
 sudo usermod -a -G video $LOGNAME
 Restart OS
 
-
 Intel(R) Graphics Compute Runtime for oneAPI Level Zero and OpenCL(TM) Driver:
 https://github.com/intel/compute-runtime/releases
 Intel Arc GPUs:
-https://dgpu-docs.intel.com/installation-guides/ubuntu/ubuntu-jammy-arc.html
-Intel Gen12/DG1 GPUs:
-https://dgpu-docs.intel.com/installation-guides/ubuntu/ubuntu-jammy-legacy.html
+https://dgpu-docs.intel.com/driver/client/overview.html
 
 
 Enable Support for ntfs-3g and exfat:
 sudo apt install ntfs-3g exfat-fuse
 
 
-Install Flatpak and add the Flathub repository:
-sudo apt install flatpak
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-
-
-Thermald (Alder Lake):
+Thermald:
 Install:
-sudo apt install autoconf autoconf-archive g++ libglib2.0-dev libdbus-1-dev libdbus-glib-1-dev libxml2-dev gtk-doc-tools libupower-glib-dev liblzma-dev libevdev-dev
-
-Download latest version:
-https://github.com/intel/thermal_daemon/tags
-
-Build:
-./autogen.sh prefix=/
-make
-sudo make install
+sudo apt install thermald
 
 Enable:
 sudo systemctl enable thermald.service
@@ -69,7 +46,7 @@ sudo sensors-detect
 TRIM Support:
 sudo systemctl enable fstrim.timer
 sudo systemctl start fstrim.timer
-sudo fstrim -v / && sudo fstrim -v /home
+sudo fstrim -v /
 
 
 Enable Firewall:
@@ -83,19 +60,15 @@ pactl set-default-sink alsa_output.usb-Harman_Multimedia_JBL_Pebbles_1.0.0-00.an
 
 
 Gnome Extensions and Tweaks:
-sudo apt install gnome-tweaks dconf-editor
-sudo apt install gnome-shell-extension-manager (or flatpak install flathub org.gnome.Extensions)
+sudo apt install gnome-tweaks dconf-editor gnome-browser-connector
+sudo apt install gnome-shell-extension-manager
 Enable minimize on click - gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
-Change volume step - dconf-editor -> org.gnome.settings-daemon.plugins.media-keys -> volume-step 2
+Change volume step - dconf-editor -> org.gnome.settings-daemon.plugins.media-keys -> volume-step 1
 
 
 Ricks-Lab GPU Utilities - monitoring AMD GPU - https://github.com/Ricks-Lab/gpu-utils:
 sudo apt install clinfo ricks-amdgpu-utils
 
-
-Benchmark:
-sudo apt-get install phoronix-test-suite
-phoronix-test-suite default-benchmark openarena xonotic tesseract gputest unigine-valley
 
 Multimedia Codecs:
 sudo apt install ubuntu-restricted-extras
@@ -113,11 +86,6 @@ sudo apt install steam-installer
 SNAPS:
 Visual Studio Code
 sudo snap install code --classic
-
-Remove Libreoffice and install snap version:
-sudo apt remove libreoffice-*
-sudo apt autoremove
-sudo snap install libreoffice
 
 Blender:
 sudo snap install blender --classic
@@ -147,10 +115,6 @@ Skype
 sudo snap install skype
 
 
-Flatpaks:
-GIMP:
-flatpak install org.gimp.GIMP org.gimp.GIMP.Plugin.Resynthesizer org.gimp.GIMP.Plugin.LiquidRescale org.gimp.GIMP.Plugin.Lensfun org.gimp.GIMP.Plugin.GMic org.gimp.GIMP.Plugin.Fourier org.gimp.GIMP.Plugin.FocusBlur org.gimp.GIMP.Plugin.BIMP org.gimp.GIMP.Manual
-
 Additional PPAs:
 
 NeteXt'73 - optymalizator systemu
@@ -162,8 +126,3 @@ sudo apt install netext73
 Proprietary GPU Drivers (NVIDIA)
 sudo add-apt-repository ppa:graphics-drivers/ppa
 sudo apt update 
-
-OBS Studio:
-sudo add-apt-repository ppa:obsproject/obs-studio
-sudo apt update
-sudo apt install obs-studio
