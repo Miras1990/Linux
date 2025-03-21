@@ -10,14 +10,6 @@ sudo fwupdmgr get-updates
 sudo fwupdmgr update
 Restart OS
 
-Install AMDGPU-PRO: https://www.amd.com/en/support/graphics/amd-radeon-rx-6000-series/amd-radeon-rx-6400-series/amd-radeon-rx-6400
-sudo apt install ./amdgpu-install-VERSION.deb
-sudo amdgpu-install --usecase=workstation -y --vulkan=pro --opencl=rocr
-sudo apt install amf-amdgpu-pro
-sudo usermod -a -G render $LOGNAME
-sudo usermod -a -G video $LOGNAME
-Restart OS
-
 Intel(R) Graphics Compute Runtime for oneAPI Level Zero and OpenCL(TM) Driver:
 https://github.com/intel/compute-runtime/releases
 Intel Arc GPUs:
