@@ -2,12 +2,19 @@ This is my configuration for Linux Fedora Workstation based on my own experience
 
 RPM Fusion repository: https://rpmfusion.org/Configuration
 sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf group upgrade core
 
-DNF Flags:
-echo 'fastestmirror=1' | sudo tee -a /etc/dnf/dnf.conf
-echo 'max_parallel_downloads=10' | sudo tee -a /etc/dnf/dnf.conf
-echo 'deltarpm=true' | sudo tee -a /etc/dnf/dnf.conf
-cat /etc/dnf/dnf.conf
+
+Configure DNF Package Manager: 
+sudo nano /etc/dnf/dnf.conf
+max_parallel_downloads=10
+deltarpm=True
+fastestmirror=True
+
+It is a good idea to update the system after this operation and restart it.
+sudo dnf upgrade --refresh
+Reboot
+
 
 Configure VA-API Video decoding on Intel
 lspci | grep VGA
@@ -23,18 +30,10 @@ sudo dnf swap mesa-vdpau-drivers.i686 mesa-vdpau-drivers-freeworld.i686
 Configure VA-API Video decoding on NVIDIA -> https://github.com/elFarto/nvidia-vaapi-driver
 sudo dnf install libavcodec-freeworld nvidia-vaapi-driver
 
+
 Thermald (Intel Thermal Daemon): https://github.com/intel/thermal_daemon 
 sudo dnf install thermald
 
-Power profiles daemon: https://gitlab.freedesktop.org/hadess/power-profiles-daemon
-sudo dnf install power-profiles-daemon
-sudo powerprofilesctl set power-saver or balanced
-
-Powertop: https://01.org/powertop/overview
-sudo dnf install powertop
-
-GRUB update
-sudo grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg
 
 TRIM Support
 sudo systemctl enable fstrim.timer
