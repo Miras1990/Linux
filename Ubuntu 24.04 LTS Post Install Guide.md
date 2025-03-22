@@ -1,3 +1,5 @@
+Things to do after installing Ubuntu 24.04 LTS
+
 Install updates and clean cache:
 sudo apt update
 sudo apt upgrade
